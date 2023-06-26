@@ -51,20 +51,16 @@
 				text-align: right;
 
 				i {
-					color: $primary;
+					color: $third;
 					margin-right: calc(#{$padding} / 3);
-					font-size: calc(#{$font-size-base} + 0.15rem);
+					font-size: $font-size-base;
 					line-height: calc(#{$font-size-base} + 0.4rem);
 				}
 
 				a {
 					width: auto;
 					display: block;
-					color: $secondary;
-
-					&:hover {
-						color: $third;
-					}
+					color: $primary;
 				}
 
 				svg {
@@ -73,13 +69,13 @@
 					display: block;
 
 					path {
-						fill: $primary;
+						fill: $third;
 					}
 				}
 
 				&:hover {
 
-					i {
+					i, a {
 						color: $third;
 					}
 

@@ -30,8 +30,9 @@
 				align-items: center;
 				font-family: $heading-font-light;
 				font-size: calc(#{$font-size-large} - 0.1rem);
-				color: $fourth;
-				padding: 0 $padding;
+				color: $primary;
+				margin: 0 $padding;
+				position: relative;
 
 				&.submenu-open {
 					// background-color: $colorCategoryTitle;
@@ -52,6 +53,17 @@
 						}
 					}
 				}
+
+				&:after {
+					content: "";
+					width: 100%;
+					height: $border_normal;
+					display: none;
+					visibility: hidden;
+					background-color: $five;
+					position: absolute;
+					bottom: calc(#{$padding} / 2);
+				}
 			}
 
 			// &:last-child {
@@ -59,11 +71,15 @@
 			// }
 
 			&.active {
-				background-color: $navLiBackgroundActive;
 
-				// a {
-				// 	color: $fourth;
-				// }
+				a {
+					//border-bottom: $border_normal solid $five;
+
+					&:after {
+						display: block;
+						visibility: visible;
+					}
+				}
 			}
 
 			// &:last-child {
@@ -78,7 +94,7 @@
 				&.active {
 
 					a {
-						color: $fourth;
+						color: $third;
 					}
 				}
 

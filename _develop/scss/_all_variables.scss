@@ -81,7 +81,7 @@ $wrapperWidthMobile: calc(100% - (#{$padding} * 2));
 /* Header
 -------------------------------------------------- */
 $headerTopHeight: calc(#{$padding} * 2.5);
-$headerBottomHeight: calc(#{$padding} * 3);
+$headerBottomHeight: calc(#{$padding} * 3.5);
 $headerLineHeight: calc(#{$padding} / 4);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLineHeight});
 

@@ -138,7 +138,7 @@ gulp.task('vendor-js', function(){
         // path.src.js + 'jquery.requestAnimationFrame.js',
         // path.src.js + 'jquery.mousewheel.js',
         // path.src.js + 'ilightbox.packed.js',
-        path.src.npm + 'magnific-popup/dist/' + 'jquery.magnific-popup.js',
+        // path.src.npm + 'magnific-popup/dist/' + 'jquery.magnific-popup.js',
         path.src.js + 'vendor.js'
     ])
     .pipe(concat('vendor.js'))

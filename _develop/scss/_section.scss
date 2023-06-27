@@ -114,36 +114,43 @@
 	&-top {
 		//margin-bottom: calc(#{$padding} * 6);
 
-		&__image {
-			width: 100%;
-			height: 100%;
+		&__mask {
+			width: $sectionTopImageWidth;
+			height: $sectionTopImageHeight;
 			display: block;
-			position: relative;
+			position: fixed;
 			overflow: hidden;
-			background-color: $fourth;
+			background-color: $primary;
+			left: 8.5vw;
+			z-index: 2;
+			transform: skew(-22deg);
+			transform-origin: 100% 0;
+		}
+
+		&__image {
+			width: calc(100vw + 2vw);
+			height: calc(#{$sectionTopImageHeight} - 10vh);
+			display: block;
+			position: fixed;
+			overflow: hidden;
+			background-color: $third;
+			left: 13.05vw;
 			z-index: 1;
+			transform: skew(-22deg);
+			//transform-origin: 100% 0;
 
 			img {
-				width: 100%;
+				width: 110vw;
 				height: 130%;
 				display: block;
 				position: absolute;
 				top: -15%;
+				left: -11vw;
 				object-position: center;
 				object-fit: cover;
+				transform: skew(22deg);
 			}
 
-		}
-
-		&__mask {
-			width: 100%;
-			height: 100%;
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background-color: rgba($secondary, 0.2);
-			z-index: 2;
 		}
 
 		&__title {

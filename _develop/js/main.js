@@ -5,8 +5,8 @@ gsap.registerPlugin(ScrollTrigger);
 function scrollSmooth() {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('.wrapper'),
-        smooth: true
-        // multiplier: 1.2
+        smooth: true,
+        multiplier: 0.8
     });
 
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -43,9 +43,104 @@ function scrollSmooth() {
     ScrollTrigger.refresh();
 }
 
+function sectionTopMove() {
+
+    let tl = new gsap.timeline({
+        scrollTrigger: {
+            trigger: ".section-top",
+            scroller: ".wrapper",
+            scrub: true,
+            // pin: true,
+            start: "top top",
+            end: "bottom top",
+            toggleActions: "play none none reverse",
+            // markers: {
+            // 	startColor: "#ccc",
+            // 	endColor: "#ccc"
+            // }
+        }
+    });
+
+    tl
+        .fromTo(".section-top__image",
+            {
+                left: "13.05vw",
+                width: "102vw"
+            },
+            {
+                left: "-10vw",
+                width: "70vw",
+                // delay: "-0.6"
+            }
+        )
+        .fromTo(".section-top__mask",
+        {
+            // width: "15vw",
+            // autoAlpha: 1,
+            left: "8.5vw"
+        },
+        {
+            // width: "40vw",
+            // autoAlpha: 0,
+            left: "-17vw",
+            duration: "0.6",
+            delay: "-0.45"
+        })
+        .fromTo("#sectionTopImage_1",
+            {
+                left: "-11vw",
+                autoAlpha: 1
+            },
+            {
+                left: "-22vw",
+                autoAlpha: 0,
+                delay: "-0.6"
+            }
+        )
+    ;
+
+    ScrollTrigger.refresh();
+}
+
+function sectionTwoMove() {
+
+    let tl = new gsap.timeline({
+        scrollTrigger: {
+            trigger: "#section_0",
+            scroller: ".wrapper",
+            scrub: true,
+            // pin: true,
+            start: "top top",
+            end: "50% top",
+            toggleActions: "play none none reverse",
+            // markers: {
+            //     startColor: "#ccc",
+            //     endColor: "#ccc"
+            // }
+        }
+    });
+
+    tl
+        .fromTo("#sectionTopImage_2",
+            {
+                left: "11vw",
+                autoAlpha: 0
+            },
+            {
+                left: "-11vw",
+                autoAlpha: 1,
+                delay: "-1"
+            }
+        )
+    ;
+
+    ScrollTrigger.refresh();
+}
 
 function initPage() {
     scrollSmooth();
+    sectionTopMove();
+    sectionTwoMove();
 }
 
 function initPageMobile() {

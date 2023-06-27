@@ -85,7 +85,8 @@ $headerBottomHeight: calc(#{$padding} * 3.5);
 $headerLineHeight: calc(#{$padding} / 4);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLineHeight});
 
-$headerLogoWidth: calc(#{$padding} * 20);
+$headerLogoWidth: 25vw;
+$headerMenuPadding: 7vw;
 
 $headerHeightMobile: $padding;
 $headerHeightBottom: $padding;

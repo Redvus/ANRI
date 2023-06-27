@@ -7,7 +7,7 @@
 	height: $headerBottomHeight;
 	display: flex;
 	flex-direction: row-reverse;
-	position: absolute;
+	position: relative;
 	top: 0;
 	right: 0;
 
@@ -23,7 +23,7 @@
 			position: relative;
 
 			a {
-				width: calc(100% - (#{$padding} * 2));
+				width: auto;
 				height: $headerBottomHeight;
 				display: flex;
 				justify-content: center;
@@ -60,9 +60,9 @@
 					height: $border_normal;
 					display: none;
 					visibility: hidden;
-					background-color: $five;
+					background-color: $secondary;
 					position: absolute;
-					bottom: calc(#{$padding} / 2);
+					bottom: calc(#{$padding} / 1.5);
 				}
 			}
 
@@ -82,24 +82,24 @@
 				}
 			}
 
-			// &:last-child {
+			 &:last-child {
 
-			// 	a {
-			// 		padding-right: 0;
-			// 	}
-			// }
+			 	a {
+			 		margin-right: 0;
+			 	}
+			 }
 
 			&:hover {
 
 				&.active {
 
 					a {
-						color: $third;
+						color: $primary;
 					}
 				}
 
 				a {
-					color: $third;
+					color: $secondary;
 				}
 			}
 		}

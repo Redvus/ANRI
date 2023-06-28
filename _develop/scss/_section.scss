@@ -9,6 +9,7 @@
 	left: 0;
 	display: block;
 	position: relative;
+	z-index: 2;
 
 	&-wrapper {
 		@extend %wrapperWidth;
@@ -123,28 +124,28 @@
 			background-color: $primary;
 			left: 8.5vw;
 			z-index: 2;
-			transform: skew(-22deg);
+			transform: $objectScew;
 			transform-origin: 100% 0;
 		}
 
 		&__image {
 			width: calc(100vw + 2vw);
-			height: calc(#{$sectionTopImageHeight} - 10vh);
+			height: calc(#{$sectionTopImageHeight} - #{$headerHeight} - #{$padding});
 			display: block;
 			position: fixed;
 			overflow: hidden;
-			background-color: $third;
+			background-color: $fourth;
 			left: 13.05vw;
 			z-index: 1;
-			transform: skew(-22deg);
+			transform: $objectScew;
 			//transform-origin: 100% 0;
 
 			img {
-				width: 110vw;
-				height: 130%;
+				width: 115vw;
+				height: 100%;
 				display: block;
 				position: absolute;
-				top: -15%;
+				top: 0;
 				left: -11vw;
 				object-position: center;
 				object-fit: cover;
@@ -154,19 +155,22 @@
 		}
 
 		&__title {
-			@extend %wrapperWidth;
+			//width: 70vw;
 			display: flex;
 			justify-content: center;
 			position: absolute;
-			left: 50%;
-			bottom: -0.5rem;
-			background-color: $five;
-			text-align: center;
-			transform: translate(-50%, 0);
-			z-index: 100;
+			//right: $headerMenuPadding;
+			right: 11vw;
+			bottom: -0.75rem;
+			//background-color: $five;
+			text-align: right;
+			transform: $objectScewReverse;
+			transform-origin: 0 100%;
 
 			h1 {
-				margin-bottom: 0.1rem;
+				color: $fourth;
+				font-size: calc(1rem + 4vmax);
+				//margin: $padding calc(#{$padding} * 2);
 			}
 		}
 
@@ -235,6 +239,27 @@
 					top: 0;
 				}
 			}
+		}
+	}
+
+	&-title {
+		//width: 70vw;
+		display: flex;
+		justify-content: center;
+		position: fixed;
+		//right: $headerMenuPadding;
+		right: 11vw;
+		top: 60vh;
+		background-color: $secondary;
+		text-align: right;
+		transform: $objectScew;
+		transform-origin: 0 100%;
+		z-index: 5;
+
+		h2 {
+			color: $fourth;
+			font-size: calc(1rem + 4vmax);
+			margin: $padding calc(#{$padding} * 2);
 		}
 	}
 

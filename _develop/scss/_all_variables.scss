@@ -60,6 +60,9 @@ $wrapperWidth: $padding * 76;
 $wrapperWidthPad: $padding * 62;
 $wrapperWidthMobile: calc(100% - (#{$padding} * 2));
 
+$objectScew: skew(-22deg);
+$objectScewReverse: skew(22deg);
+
 /* Layout
 -------------------------------------------------- */
 %wrapperWidth {

@@ -8,7 +8,7 @@ function scrollSmooth() {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('.wrapper'),
         smooth: true,
-        multiplier: 0.8
+        multiplier: 0.6
     });
 
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -312,23 +312,31 @@ function sectionFiveMove() {
     });
 
     tl
-        .to(sectionFrontTopImage,
+        .to(sectionTitleLine, {
+            left: "100vw",
+            autoAlpha: 0,
+            delay: "-0.6"
+        })
+        .to(sectionTitle_3,
             {
-                left: "-20vw",
+                right: '0',
                 autoAlpha: 0,
                 delay: "-0.6"
             }
         )
-        .to(sectionTitleLine, {
-            left: "40vw",
-            autoAlpha: 0,
-            delay: "-0.4"
-        })
-        .to(sectionTitle_3,
+        .to(sectionFrontImage_3,
             {
-                right: '20vw',
-                autoAlpha: 0,
+                left: "0",
+                width: "118vw",
                 delay: "-0.6"
+            }
+        )
+        .to(sectionFrontTopImage,
+            {
+                left: "-10vw",
+                width: "120vw",
+                height: "70vh",
+                delay: "-0.4"
             }
         )
     ;

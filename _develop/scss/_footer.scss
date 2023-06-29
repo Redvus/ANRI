@@ -92,27 +92,32 @@ $footer-grid: (
         }
 
         &__logo {
-            width: 100%;
-            margin-bottom: calc(#{$padding} * 2);
+            width: auto;
+            margin-right: calc(#{$padding} * 2);
 
             svg {
                 width: auto;
-                height: calc(#{$padding} * 5);
+                height: calc(#{$padding} * 3);
                 display: block;
             }
 
-            &--red {
-                fill: $fourth;
-            }
+            .header__logo {
 
-            &--black {
-                fill: $fourth;
-            }
+                //&--red {
+                //    fill: $fourth;
+                //}
 
+                &--blue {
+                    fill: $fourth;
+                }
+            }
         }
 
         &__company {
-            width: calc((100% / 3.6) - (#{$padding} * 2));
+            width: calc(100% / 2);
+            display: flex;
+            flex-direction: row;
+            padding: calc(#{$padding} * 2) 0;
         }
 
         &__adress {
@@ -147,8 +152,10 @@ $footer-grid: (
         }
 
         &__links {
-            padding-top: $padding * 6;
-
+            width: calc(50% - (#{$padding} * 2));
+            padding: calc(#{$padding} * 2) 0 calc(#{$padding} * 2) calc(#{$padding} * 2);
+            display: flex;
+            align-items: flex-start;
 
             h4 {
                 text-align: right;
@@ -158,11 +165,13 @@ $footer-grid: (
             ul {
                 width: 100%;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                align-items: center;
                 justify-content: flex-end;
                 text-align: right;
 
                 li {
+                    margin-left: $padding;
 
                     a {
                         color: $fourth;

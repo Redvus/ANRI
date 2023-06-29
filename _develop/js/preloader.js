@@ -1,10 +1,10 @@
 // Hide loading overlay <div /> (with spinner) after page complete loading. After hiding,
 //   <div /> will be removed, and for <body> removed css class 'noscroll'
-var _loading_spinner = setInterval(function () {
+let _loading_spinner = setInterval(function () {
 
 	if (document.readyState == 'complete') {
 
-		var $page_loading = document.getElementById('page_loading'),
+		let $page_loading = document.getElementById('page_loading'),
 			$body = document.body || document.getElementsByTagName('body')[0],
 			speed = 800,
 			delay = 200,
@@ -15,7 +15,7 @@ var _loading_spinner = setInterval(function () {
 		if ((typeof $page_loading != 'undefined') && ($page_loading != null)) {
 
 			setTimeout(function () {
-				var transition = 'all ' + speed.toString() + 'ms ease-in-out',
+				let transition = 'all ' + speed.toString() + 'ms ease-in-out',
 					removeCssClass = function (obj, className) {
 						obj.className = obj.className.replace(className, '').replace('  ', ' ');
 					}

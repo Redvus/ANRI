@@ -261,6 +261,49 @@
 			font-size: calc(1rem + 4vmax);
 			margin: $padding calc(#{$padding} * 2);
 		}
+
+		&:before {
+			content: "";
+			width: 40%;
+			height: $border_bold;
+			display: block;
+			background-color: $secondary;
+			position: absolute;
+			margin-top: calc(-#{$padding} * 1.5);
+			right: $border_bold;
+		}
+
+		&:after {
+			content: "";
+			width: calc(#{$border_bold} + (#{$border_bold} / 6));
+			height: calc(#{$border_bold} * 10);
+			display: block;
+			background-color: $secondary;
+			position: absolute;
+			margin-top: calc((-#{$padding} * 1.5) - (#{$border_bold} * 9));
+			right: 2.9rem;
+			transform: skew(44deg);
+		}
+
+		&__line {
+			height: auto;
+			display: flex;
+			flex-direction: row;
+			position: fixed;
+			top: calc(100vh - #{$headerHeight} - #{$sectionTopLineHeight});
+			left: 52vmax;
+			transform-origin: 100% 100%;
+			transform: $objectScew;
+
+			li {
+				width: calc(#{$padding} * 2);
+				height: $sectionTopLineHeight;
+				display: block;
+				position: relative;
+				background-color: $five;
+				margin-right: calc(#{$padding} * 2);
+			}
+		}
 	}
 
 	&-map {

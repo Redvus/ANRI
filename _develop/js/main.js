@@ -2,6 +2,8 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+window.onresize = function(){ location.reload(); }
+
 function scrollSmooth() {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('.wrapper'),
@@ -60,7 +62,8 @@ const wrapper = document.querySelector('.wrapper'),
     sectionTopTitle = document.querySelector('.section-top__title'),
     sectionTitle_1 = document.getElementById('sectionTitle_1'),
     sectionTitle_2 = document.getElementById('sectionTitle_2'),
-    sectionTitle_3 = document.getElementById('sectionTitle_3')
+    sectionTitle_3 = document.getElementById('sectionTitle_3'),
+    sectionTitleLine = document.querySelector('.section-title__line')
 ;
 
 function sectionTopMove() {
@@ -78,10 +81,6 @@ function sectionTopMove() {
             // 	startColor: "#ccc",
             // 	endColor: "#ccc"
             // }
-        },
-        onComplete: () => {
-            // sectionTwoMove();
-            // wrapper.removeChild(sectionFront_0)
         }
     });
 
@@ -93,6 +92,11 @@ function sectionTopMove() {
                 // delay: "-0.6"
             }
         )
+        .from(sectionTitleLine, {
+            left: "100vw",
+            autoAlpha: 0,
+            delay: "-0.4"
+        })
         .to(sectionFrontTopMask,
             {
                 // width: "40vw",
@@ -109,7 +113,6 @@ function sectionTopMove() {
             }
         )
         .to(sectionTopTitle, {
-            // right: "65vw",
             autoAlpha: 0,
             delay: "-0.7"
         })
@@ -134,10 +137,7 @@ function sectionTwoMove() {
             //     endColor: "#ccc"
             // }
         },
-        delay: "-1.3",
-        onComplete: () => {
-
-        }
+        delay: "-1.3"
     });
 
     tl
@@ -148,9 +148,15 @@ function sectionTwoMove() {
             },
             {
                 left: "-20vw",
-                autoAlpha: 1
+                autoAlpha: 1,
+                ease: "sine.inOut"
             }
         )
+        .to(sectionFrontImage_0, {
+            left: "-=3vw",
+            ease: "sine.inOut",
+            delay: "-0.6"
+        })
         .fromTo(sectionTitle_1,
             {
                 right: '0',
@@ -183,10 +189,7 @@ function sectionThreeMove() {
             //     endColor: "#ccc"
             // }
         },
-        delay: "-1.3",
-        onComplete: () => {
-
-        }
+        delay: "-1.3"
     });
 
     tl
@@ -197,20 +200,28 @@ function sectionThreeMove() {
             },
             {
                 left: "-20vw",
-                autoAlpha: 1
+                autoAlpha: 1,
+                ease: "sine.inOut"
             }
         )
+        .to(sectionFrontImage_1, {
+            left: "-=3vw",
+            ease: "sine.inOut",
+            delay: "-0.6"
+        })
         .to(sectionTitle_1,
             {
                 right: '15vw',
                 autoAlpha: 0,
-                delay: "-0.6"
+                delay: "-0.4",
+                ease: "sine.inOut"
             }
         )
         .fromTo(sectionTitle_2,
             {
                 right: '0',
-                autoAlpha: 0
+                autoAlpha: 0,
+                delay: "-0.4"
             },
             {
                 right: '11vw',
@@ -239,10 +250,7 @@ function sectionFourMove() {
             //     endColor: "#ccc"
             // }
         },
-        delay: "-1.3",
-        onComplete: () => {
-
-        }
+        delay: "-1.3"
     });
 
     tl
@@ -256,11 +264,16 @@ function sectionFourMove() {
                 autoAlpha: 1
             }
         )
+        .to(sectionFrontImage_2, {
+            left: "-=3vw",
+            ease: "sine.inOut",
+            delay: "-0.6"
+        })
         .to(sectionTitle_2,
             {
                 right: '15vw',
                 autoAlpha: 0,
-                delay: "-0.6"
+                delay: "-0.4"
             }
         )
         .fromTo(sectionTitle_3,
@@ -302,14 +315,20 @@ function sectionFiveMove() {
         .to(sectionFrontTopImage,
             {
                 left: "-20vw",
-                autoAlpha: 0
+                autoAlpha: 0,
+                delay: "-0.6"
             }
         )
+        .to(sectionTitleLine, {
+            left: "40vw",
+            autoAlpha: 0,
+            delay: "-0.4"
+        })
         .to(sectionTitle_3,
             {
                 right: '20vw',
                 autoAlpha: 0,
-                delay: "-0.8"
+                delay: "-0.6"
             }
         )
     ;

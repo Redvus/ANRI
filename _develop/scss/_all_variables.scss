@@ -2,16 +2,16 @@
 =            Variable            =
 ================================*/
 
-$primary  : #321557;  //Темно-синий
-$secondary: #de0028;  //Красный
-$third    : #dad2dd;  //15% $primary
-$fourth   : #fff;
-$five     : #f2a07c; //50% $secondary
-$error    : #ff9015;
-$success  : #19d3c5;
+$primary: #321557; //Темно-синий
+$secondary: #de0028; //Красный
+$third: #dad2dd; //15% $primary
+$fourth: #fff;
+$five: #f2a07c; //50% $secondary
+$error: #ff9015;
+$success: #19d3c5;
 
-$error : $third;
-$success : $fourth;
+$error: $third;
+$success: $fourth;
 
 $border_thin: 0.1rem;
 $border_normal: 0.3rem;
@@ -23,26 +23,26 @@ $base-timing: 0.3s;
 /* Media
 -------------------------------------------------- */
 $main-grid: (
-    columns: 12,
-    gutter: 0
+        columns: 12,
+        gutter: 0
 );
 
 $second-grid: (
-    columns: 12,
-    gutter: 2rem
+        columns: 12,
+        gutter: 2rem
 );
 
 $third-grid: (
-    columns: 12,
-    gutter: 1rem
+        columns: 12,
+        gutter: 1rem
 );
 
-$imac27 : 2560px;
-$imac21 : 1920px;
-$cinema : 1680px;
-$pad_g : 1080px;
-$pad_v : 820px;
-$mobile : 570px;
+$imac27: 2560px;
+$imac21: 1920px;
+$cinema: 1680px;
+$pad_g: 1080px;
+$pad_v: 820px;
+$mobile: 570px;
 
 $XXLarge: (media: "(min-width: #{$imac21})");
 $XLarge: (media: "(min-width: #{$cinema}) and (max-width: #{$imac21})");
@@ -55,7 +55,7 @@ $HSmall: (media: "(max-height: 420px)");
 /* End of Media
 -------------------------------------------------- */
 
-$padding     : 1rem;
+$padding: 1rem;
 $wrapperWidth: $padding * 76;
 $wrapperWidthPad: $padding * 62;
 $wrapperWidthMobile: calc(100% - (#{$padding} * 2));
@@ -97,23 +97,24 @@ $headerHeightBottom: $padding;
 /* Nav
 -------------------------------------------------- */
 $colorTextActive: $fourth;
-$colorTextHover : $third;
+$colorTextHover: $third;
 $navLiBackgroundActive: darken($primary, 7%);
 
 /* Page
 -------------------------------------------------- */
-$sectionTopHeight          : 100vh;
+$sectionTopHeight: 100vh;
 $sectionTopImageWidth: 15vw;
 $sectionTopImageHeight: calc(100vh - #{$headerHeight});
+$sectionTopLineHeight: calc(1rem + 10vmin);
 
 $sectionServicesTitleHeight: calc(#{$padding} * 6);
 $sectionServicesImageHeight: calc(#{$padding} * 6);
-$sectionServicesLiWidth    : calc(#{$wrapperWidth} / 3);
-$sectionServicesLiHeight   : calc(#{$wrapperWidth} / 2.5);
+$sectionServicesLiWidth: calc(#{$wrapperWidth} / 3);
+$sectionServicesLiHeight: calc(#{$wrapperWidth} / 2.5);
 
-$sectionServicesLiWidthPad : 50%;
+$sectionServicesLiWidthPad: 50%;
 
-$cardHoverBackground: lighten($third, 15%);  //lighten($primary, 60%)
+$cardHoverBackground: lighten($third, 15%); //lighten($primary, 60%)
 
 $inputHeight: $padding * 2.5;
 
@@ -123,10 +124,10 @@ $sectionTopHeightMobile: 40vmax;
 
 /* News
 -------------------------------------------------- */
-$sectionNewsLiWidth : calc(#{$wrapperWidth} / 2);
+$sectionNewsLiWidth: calc(#{$wrapperWidth} / 2);
 $sectionNewsLiHeight: calc(#{$wrapperWidth} / 5.5);
 
-$sectionNewsLiWidthPad : calc(#{$wrapperWidthPad} / 2);
+$sectionNewsLiWidthPad: calc(#{$wrapperWidthPad} / 2);
 
 /* Mobile
 -------------------------------------------------- */
@@ -261,7 +262,7 @@ $headerMobileTopHeight: calc(#{$padding} * 3);
 =============================*/
 
 @font-face {
-    font-family:"Roboto Black";
+    font-family: "Roboto Black";
     src: local("fonts/Roboto-Black-export/"),
     url("fonts/Roboto-Black-export/Roboto-Black.woff2") format("woff2"),
     url("fonts/Roboto-Black-export/Roboto-Black.woff") format("woff");
@@ -271,7 +272,7 @@ $headerMobileTopHeight: calc(#{$padding} * 3);
 }
 
 @font-face {
-    font-family:"Roboto Bold";
+    font-family: "Roboto Bold";
     src: local("fonts/Roboto-Bold-export/"),
     url("fonts/Roboto-Bold-export/Roboto-Bold.woff2") format("woff2"),
     url("fonts/Roboto-Bold-export/Roboto-Bold.woff") format("woff");
@@ -281,7 +282,7 @@ $headerMobileTopHeight: calc(#{$padding} * 3);
 }
 
 @font-face {
-    font-family:"Roboto Medium";
+    font-family: "Roboto Medium";
     src: local("fonts/Roboto-Medium-export/"),
     url("fonts/Roboto-Medium-export/Roboto-Medium.woff2") format("woff2"),
     url("fonts/Roboto-Medium-export/Roboto-Medium.woff") format("woff");
@@ -291,7 +292,7 @@ $headerMobileTopHeight: calc(#{$padding} * 3);
 }
 
 @font-face {
-    font-family:"Roboto Light";
+    font-family: "Roboto Light";
     src: local("fonts/Roboto-Light-export/"),
     url("fonts/Roboto-Light-export/Roboto-Light.woff2") format("woff2"),
     url("fonts/Roboto-Light-export/Roboto-Light.woff") format("woff");
@@ -301,7 +302,7 @@ $headerMobileTopHeight: calc(#{$padding} * 3);
 }
 
 @font-face {
-    font-family:"Roboto Thin";
+    font-family: "Roboto Thin";
     src: local("fonts/Roboto-Thin-export/"),
     url("fonts/Roboto-Thin-export/Roboto-Thin.woff2") format("woff2"),
     url("fonts/Roboto-Thin-export/Roboto-Thin.woff") format("woff");
@@ -312,39 +313,39 @@ $headerMobileTopHeight: calc(#{$padding} * 3);
 
 $fa-font-path: 'fonts/';
 
- $primary-font:          $font-stack-helvetica;
+$primary-font: $font-stack-helvetica;
 // $primary-font:          $font-stack-verdana;
 // $primary-font:          'Roboto', sans-serif;
 
 // $heading-font:          "PF DinDisplay Bold";
 // $heading-font-light:    "PF DinDisplay Reg";
-$heading-font:          "Roboto Black";
-$heading-font-light:    "Roboto Light";
+$heading-font: "Roboto Black";
+$heading-font-light: "Roboto Light";
 
-$body-font-color     : $secondary;
+$body-font-color: $secondary;
 
-$body-font-size      : 1rem !default;
-$body-font-weight    : normal !default;
-$body-line-height    : 1.4 !default;
-$heading-line-height : 1 !default;
+$body-font-size: 1rem !default;
+$body-font-weight: normal !default;
+$body-line-height: 1.4 !default;
+$heading-line-height: 1 !default;
 
-$heading-font-modular : 1vw !default;
+$heading-font-modular: 1vw !default;
 
 $bourbon: (
-    "modular-scale-base": $heading-font-modular,
-    "modular-scale-ratio": $major-third,
+        "modular-scale-base": $heading-font-modular,
+        "modular-scale-ratio": $major-third,
 );
 
-$font-size-base:    $body-font-size !default;
-$font-size-large:   $font-size-base + 0.2 !default; // ~18px
-$font-size-small:   $font-size-base - 0.2 !default; // ~14px
+$font-size-base: $body-font-size !default;
+$font-size-large: $font-size-base + 0.2 !default; // ~18px
+$font-size-small: $font-size-base - 0.2 !default; // ~14px
 
-$font-size-h1:      calc(#{$font-size-base} + 1.8rem) !default; //calc(1rem + 2vmax) !default; // ~3rem 48px modular-scale(6)
-$font-size-h2:      calc(1rem + 0.9vmax) !default; // ~2.5rem 40px modular-scale(5)
-$font-size-h3:      calc(#{$font-size-base} + 0.5rem) !default; // ~2rem 33px calc(1rem + 0.7vmax) !default
-$font-size-h4:      calc(1rem + 0.15vmax) !default; // ~1.728rem 28px
-$font-size-h5:      calc(1rem + 0.10vmax) !default; // ~1.44rem 23px
-$font-size-h6:      calc(1rem + 0.07vmax) !default; // ~1.2rem 19px
+$font-size-h1: calc(#{$font-size-base} + 1.8rem) !default; //calc(1rem + 2vmax) !default; // ~3rem 48px modular-scale(6)
+$font-size-h2: calc(1rem + 0.9vmax) !default; // ~2.5rem 40px modular-scale(5)
+$font-size-h3: calc(#{$font-size-base} + 0.5rem) !default; // ~2rem 33px calc(1rem + 0.7vmax) !default
+$font-size-h4: calc(1rem + 0.15vmax) !default; // ~1.728rem 28px
+$font-size-h5: calc(1rem + 0.10vmax) !default; // ~1.44rem 23px
+$font-size-h6: calc(1rem + 0.07vmax) !default; // ~1.2rem 19px
 
 %px {
     font: {
@@ -388,6 +389,7 @@ $font-size-h6:      calc(1rem + 0.07vmax) !default; // ~1.2rem 19px
     margin-top: 0;
     margin-bottom: 0;
 }
+
 /*=====  End of Fonts  ======*/
 
 
@@ -576,5 +578,6 @@ select {
     cursor: inherit;
     line-height: inherit;
 }
+
 /*=====  End of Layout  ======*/
 

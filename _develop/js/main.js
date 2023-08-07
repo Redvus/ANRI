@@ -8,7 +8,7 @@ function scrollSmooth() {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('.wrapper'),
         smooth: true,
-        multiplier: 0.3
+        multiplier: 0.2
     });
 
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -348,8 +348,8 @@ function sectionFiveMove() {
         .to(sectionFrontTopImage,
             {
                 left: "-10vw",
-                width: "120vw",
-                height: "70vh",
+                width: "125vw",
+                // height: "70vh",
                 delay: "-0.4"
             }
         )

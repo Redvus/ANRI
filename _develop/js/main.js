@@ -8,7 +8,7 @@ function scrollSmooth() {
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('.wrapper'),
         smooth: true,
-        multiplier: 0.6
+        multiplier: 0.3
     });
 
     locoScroll.on("scroll", ScrollTrigger.update);
@@ -41,7 +41,7 @@ function scrollSmooth() {
         ease: "none"
     });
 
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.addEventListener("refreshInit", () => locoScroll.update());
     ScrollTrigger.refresh();
 }
 
@@ -55,6 +55,7 @@ const wrapper = document.querySelector('.wrapper'),
     sectionFront_4 = document.getElementById('sectionFront_4'),
     sectionFrontTopImage = document.querySelector('.section-top__image'),
     sectionFrontTopMask = document.querySelector('.section-top__mask'),
+    sectionFrontTopMaskRed = document.querySelector('.section-top__mask_red'),
     sectionFrontImage_0 = document.getElementById('sectionFrontImage_0'),
     sectionFrontImage_1 = document.getElementById('sectionFrontImage_1'),
     sectionFrontImage_2 = document.getElementById('sectionFrontImage_2'),
@@ -74,7 +75,7 @@ function sectionTopMove() {
             scroller: wrapper,
             scrub: true,
             // pin: true,
-            start: "top top",
+            start: "top 104px",
             end: "bottom top",
             toggleActions: "play none none reverse",
             // markers: {
@@ -85,11 +86,10 @@ function sectionTopMove() {
     });
 
     tl
-        .to(sectionFrontTopImage,
-            {
+        .to(sectionFrontTopImage, {
                 left: "-10vw",
                 width: "70vw",
-                // delay: "-0.6"
+                delay: "-0.2"
             }
         )
         .from(sectionTitleLine, {
@@ -97,24 +97,32 @@ function sectionTopMove() {
             autoAlpha: 0,
             delay: "-0.4"
         })
-        .to(sectionFrontTopMask,
-            {
+        .to(sectionFrontTopMaskRed, {
+            // skewX: '0deg',
+            // left: "-17vw",
+            autoAlpha: 0,
+            duration: "1",
+            delay: "-0.6",
+            ease: 'power3.out'
+        })
+        .to(sectionFrontTopMask, {
                 // width: "40vw",
                 // autoAlpha: 0,
                 left: "-17vw",
-                duration: "0.6",
-                delay: "-0.45"
+                duration: "1",
+                delay: "-0.9",
+                ease: 'power3.out'
             })
-        .to(sectionFrontImage_0,
-            {
+        .to(sectionFrontImage_0, {
                 left: "-22vw",
                 // autoAlpha: 0,
-                delay: "-0.6"
+                duration: "1",
+                delay: "-1"
             }
         )
         .to(sectionTopTitle, {
             autoAlpha: 0,
-            delay: "-0.7"
+            delay: "-1"
         })
     ;
 
@@ -127,10 +135,10 @@ function sectionTwoMove() {
         scrollTrigger: {
             trigger: sectionFront_1,
             scroller: wrapper,
-            scrub: true,
+            scrub: false,
             // pin: true,
             start: "top top",
-            end: "50% top",
+            end: "100% top",
             toggleActions: "play none none reverse",
             // markers: {
             //     startColor: "#ccc",
@@ -143,19 +151,19 @@ function sectionTwoMove() {
     tl
         .fromTo(sectionFrontImage_1,
             {
-                left: "-17vw",
+                left: "3vw",
                 autoAlpha: 0
             },
             {
-                left: "-20vw",
+                left: "0",
                 autoAlpha: 1,
                 ease: "sine.inOut"
             }
         )
         .to(sectionFrontImage_0, {
-            left: "-=3vw",
+            // left: "-=3vw",
             ease: "sine.inOut",
-            delay: "-0.6"
+            delay: "-0.8"
         })
         .fromTo(sectionTitle_1,
             {
@@ -165,6 +173,7 @@ function sectionTwoMove() {
             {
                 right: '11vw',
                 autoAlpha: 1,
+                duration: "0.6",
                 delay: "-0.4"
             }
         )
@@ -179,10 +188,10 @@ function sectionThreeMove() {
         scrollTrigger: {
             trigger: sectionFront_2,
             scroller: wrapper,
-            scrub: true,
+            scrub: false,
             // pin: true,
             start: "top top",
-            end: "50% top",
+            end: "100% top",
             toggleActions: "play none none reverse",
             // markers: {
             //     startColor: "#ccc",
@@ -195,11 +204,11 @@ function sectionThreeMove() {
     tl
         .fromTo(sectionFrontImage_2,
             {
-                left: "-17vw",
+                left: "3vw",
                 autoAlpha: 0
             },
             {
-                left: "-20vw",
+                left: "0",
                 autoAlpha: 1,
                 ease: "sine.inOut"
             }
@@ -213,6 +222,7 @@ function sectionThreeMove() {
             {
                 right: '15vw',
                 autoAlpha: 0,
+                duration: "0.4",
                 delay: "-0.4",
                 ease: "sine.inOut"
             }
@@ -226,6 +236,7 @@ function sectionThreeMove() {
             {
                 right: '11vw',
                 autoAlpha: 1,
+                duration: "0.3",
                 delay: "-0.4"
             }
         )
@@ -240,10 +251,10 @@ function sectionFourMove() {
         scrollTrigger: {
             trigger: sectionFront_3,
             scroller: wrapper,
-            scrub: true,
+            scrub: false,
             // pin: true,
             start: "top top",
-            end: "50% top",
+            end: "100% top",
             toggleActions: "play none none reverse",
             // markers: {
             //     startColor: "#ccc",
@@ -256,11 +267,11 @@ function sectionFourMove() {
     tl
         .fromTo(sectionFrontImage_3,
             {
-                left: "-17vw",
+                left: "3vw",
                 autoAlpha: 0
             },
             {
-                left: "-20vw",
+                left: "0",
                 autoAlpha: 1
             }
         )
@@ -273,6 +284,7 @@ function sectionFourMove() {
             {
                 right: '15vw',
                 autoAlpha: 0,
+                duration: "0.2",
                 delay: "-0.4"
             }
         )
@@ -284,6 +296,7 @@ function sectionFourMove() {
             {
                 right: '11vw',
                 autoAlpha: 1,
+                duration: "0.3",
                 delay: "-0.4"
             }
         )
@@ -321,6 +334,7 @@ function sectionFiveMove() {
             {
                 right: '0',
                 autoAlpha: 0,
+                duration: "0.2",
                 delay: "-0.6"
             }
         )

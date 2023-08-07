@@ -2,11 +2,11 @@
 //   <div /> will be removed, and for <body> removed css class 'noscroll'
 let _loading_spinner = setInterval(function () {
 
-	if (document.readyState == 'complete') {
+	if (document.readyState === 'complete') {
 
 		let $page_loading = document.getElementById('page_loading'),
 			$body = document.body || document.getElementsByTagName('body')[0],
-			speed = 800,
+			speed = 400,
 			delay = 200,
 			$backColor = '#ffffff',
 			$loadAnimation = '0'
@@ -33,11 +33,11 @@ let _loading_spinner = setInterval(function () {
 
 				setTimeout(function () {
 					$page_loading.parentNode.removeChild($page_loading);
-				}, speed + 10);
+				}, speed);
 
 			}, delay);
 		}
 
 		clearInterval(_loading_spinner);
 	}
-}, 10);
+}, 2);

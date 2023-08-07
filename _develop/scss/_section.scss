@@ -4,7 +4,7 @@
 
 .section {
 	width: 100%;
-	height: 100vh;
+	height: 30vh;
 	top: 0;
 	left: 0;
 	display: block;
@@ -113,7 +113,7 @@
 	}
 
 	&-top {
-		//margin-bottom: calc(#{$padding} * 6);
+		height: calc(70vh - #{$headerHeight});
 
 		&__mask {
 			width: $sectionTopImageWidth;
@@ -122,10 +122,24 @@
 			position: fixed;
 			overflow: hidden;
 			background-color: $primary;
-			left: 8.5vw;
-			z-index: 2;
+			left: 7rem;
 			transform: $objectScew;
 			transform-origin: 100% 0;
+			z-index: 5;
+
+			&_red {
+				content: "";
+				width: $sectionTopImageWidth;
+				height: calc(#{$sectionTopImageHeight} - #{$headerHeight} - #{$padding});
+				display: block;
+				position: fixed;
+				overflow: hidden;
+				background-color: rgba($secondary, 0.4);
+				left: -8.4rem;
+				transform: $objectScewReverseUp;
+				transform-origin: 100% 0;
+				z-index: 2;
+			}
 		}
 
 		&__image {
@@ -135,10 +149,10 @@
 			position: fixed;
 			overflow: hidden;
 			background-color: $fourth;
-			left: 13.05vw;
-			z-index: 1;
+			left: 7rem; //13.05vw
 			transform: $objectScew;
 			//transform-origin: 100% 0;
+			z-index: 1;
 
 			img {
 				width: 115vw;
@@ -150,6 +164,7 @@
 				object-position: center;
 				object-fit: cover;
 				transform: skew(22deg);
+				z-index: 1;
 			}
 
 		}
@@ -166,6 +181,7 @@
 			text-align: right;
 			transform: $objectScewReverse;
 			transform-origin: 0 100%;
+			z-index: 3;
 
 			h1 {
 				color: $fourth;
@@ -240,6 +256,10 @@
 				}
 			}
 		}
+	}
+
+	&-last {
+		height: 100vh;
 	}
 
 	&-title {

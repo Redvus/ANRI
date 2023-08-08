@@ -122,17 +122,6 @@
 		position: relative;
 	}
 
-	&-line {
-		width: 100%;
-		height: $headerLineHeight;
-		display: block;
-		position: fixed;
-		background-color: $five;
-		top: 0;
-		left: 0;
-		z-index: 9995;
-	}
-
 	&__logo {
 		width: $headerLogoWidth;
 		height: auto;

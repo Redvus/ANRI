@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="0cc28e33-f4be-4338-8896-90f0d8f3cdf9" name="RedvusVoos" url="https://anri.redvus.ru">
-        <fileTransfer rootFolder="/var/www/anrigroup" accessType="SFTP" host="176.57.215.214" port="22" sshConfigId="39b39f89-e843-4c29-aa44-a4406c640d5e" sshConfig="redvus@176.57.215.214:22 password">
+        <fileTransfer rootFolder="/var/www/anrigroup/html/assets" accessType="SFTP" host="176.57.215.214" port="22" sshConfigId="39b39f89-e843-4c29-aa44-a4406c640d5e" sshConfig="redvus@176.57.215.214:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

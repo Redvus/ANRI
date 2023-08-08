@@ -87,4 +87,66 @@ html {
         bottom: 0;
     }
 
-  }
+}
+
+.scroll-line {
+    width: 100%;
+    height: $headerLineHeight;
+    display: block;
+    position: fixed;
+    background-color: $secondary;
+    top: 0;
+    left: 0;
+    z-index: 9995;
+
+    &__back {
+        content: "";
+        width: 100%;
+        height: $headerLineHeight;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: lighten($five, 10%);
+        z-index: 0;
+    }
+}
+
+.scroll-markers {
+    width: 100%;
+    height: $headerLineHeight;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9996;
+
+    &__marker {
+        width: $headerLineHeight;
+        height: $headerLineHeight;
+        display: block;
+        position: fixed;
+        top: 0;
+        background-color: $secondary;
+    }
+}
+
+#scrollMarkerTop {
+    left: 35.5%;
+}
+
+#scrollMarkerFirst {
+    left: 50%;
+}
+
+#scrollMarkerSecond {
+    left: 64.5%;
+}
+
+#scrollMarkerThird {
+    left: 79.3%;
+}
+
+#scrollMarkerFour {
+    left: 50%;
+}

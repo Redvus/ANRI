@@ -5,15 +5,18 @@ gsap.registerPlugin(ScrollTrigger);
 window.onresize = function(){ location.reload(); }
 
 function scrollSmooth() {
+    const scrollLine = document.getElementById('scrollLine'),
+        wrapper = document.querySelector('.wrapper');
     const locoScroll = new LocomotiveScroll({
-        el: document.querySelector('.wrapper'),
+        el: wrapper,
         smooth: true,
         multiplier: 0.3
     });
 
+
     locoScroll.on("scroll", ScrollTrigger.update);
 
-    ScrollTrigger.scrollerProxy(".wrapper", {
+    ScrollTrigger.scrollerProxy(wrapper, {
         scrollTop(value) {
             return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
         },
@@ -24,13 +27,13 @@ function scrollSmooth() {
         // pinType: document.querySelector(".wrapper-info").style.transform ? "transform" : "fixed"
     });
 
-    gsap.from(".header-line", {
+    gsap.from(scrollLine, {
         scrollTrigger: {
-            trigger: ".header-line",
-            scroller: ".wrapper",
+            trigger: scrollLine,
+            scroller: wrapper,
             scrub: true,
             start: "0 0",
-            end: () => `+=${document.querySelector(".wrapper").offsetHeight - window.innerHeight}`,
+            end: () => `+=${wrapper.offsetHeight - window.innerHeight}`,
             // markers: {
             // 	startColor: "#ccc",
             // 	endColor: "#ccc"
@@ -53,6 +56,7 @@ const wrapper = document.querySelector('.wrapper'),
     sectionFront_2 = document.getElementById('sectionFront_2'),
     sectionFront_3 = document.getElementById('sectionFront_3'),
     sectionFront_4 = document.getElementById('sectionFront_4'),
+    sectionFront_5 = document.getElementById('sectionFront_5'),
     sectionFrontTopImage = document.querySelector('.section-top__image'),
     sectionFrontTopMask = document.querySelector('.section-top__mask'),
     sectionFrontTopMaskRed = document.querySelector('.section-top__mask_red'),
@@ -64,7 +68,12 @@ const wrapper = document.querySelector('.wrapper'),
     sectionTitle_1 = document.getElementById('sectionTitle_1'),
     sectionTitle_2 = document.getElementById('sectionTitle_2'),
     sectionTitle_3 = document.getElementById('sectionTitle_3'),
-    sectionTitleLine = document.querySelector('.section-title__line')
+    sectionTitleLine = document.querySelector('.section-title__line'),
+    sectionTopText = document.getElementById('sectionTopText'),
+    scrollMarkerTop = document.getElementById('scrollMarkerTop'),
+    scrollMarkerFirst = document.getElementById('scrollMarkerFirst'),
+    scrollMarkerSecond = document.getElementById('scrollMarkerSecond'),
+    scrollMarkerThird = document.getElementById('scrollMarkerThird')
 ;
 
 function sectionTopMove() {
@@ -82,6 +91,11 @@ function sectionTopMove() {
             // 	startColor: "#ccc",
             // 	endColor: "#ccc"
             // }
+        },
+        onStart: () => {
+            tl.set(scrollMarkerTop, {
+                backgroundColor: '#f2a07c'
+            })
         }
     });
 
@@ -94,6 +108,11 @@ function sectionTopMove() {
         )
         .from(sectionTitleLine, {
             left: "100vw",
+            autoAlpha: 0,
+            delay: "-0.4"
+        })
+        .from(sectionTopText, {
+            x: '5vw',
             autoAlpha: 0,
             delay: "-0.4"
         })
@@ -110,7 +129,7 @@ function sectionTopMove() {
                 // autoAlpha: 0,
                 left: "-17vw",
                 duration: "1",
-                delay: "-0.9",
+                delay: "-1",
                 ease: 'power3.out'
             })
         .to(sectionFrontImage_0, {
@@ -149,6 +168,11 @@ function sectionTwoMove() {
     });
 
     tl
+        .to(sectionTopText, {
+            x: '-2vw',
+            autoAlpha: 0,
+            delay: "-0.1"
+        })
         .fromTo(sectionFrontImage_1,
             {
                 left: "3vw",
@@ -198,7 +222,12 @@ function sectionThreeMove() {
             //     endColor: "#ccc"
             // }
         },
-        delay: "-1.3"
+        delay: "-1.3",
+        onStart: () => {
+            tl.set(scrollMarkerFirst, {
+                backgroundColor: '#f2a07c'
+            })
+        }
     });
 
     tl
@@ -261,7 +290,12 @@ function sectionFourMove() {
             //     endColor: "#ccc"
             // }
         },
-        delay: "-1.3"
+        delay: "-1.3",
+        onStart: () => {
+            tl.set(scrollMarkerSecond, {
+                backgroundColor: '#f2a07c'
+            })
+        }
     });
 
     tl
@@ -280,16 +314,14 @@ function sectionFourMove() {
             ease: "sine.inOut",
             delay: "-0.6"
         })
-        .to(sectionTitle_2,
-            {
+        .to(sectionTitle_2, {
                 right: '15vw',
                 autoAlpha: 0,
                 duration: "0.2",
                 delay: "-0.4"
             }
         )
-        .fromTo(sectionTitle_3,
-            {
+        .fromTo(sectionTitle_3, {
                 right: '0',
                 autoAlpha: 0
             },
@@ -321,7 +353,12 @@ function sectionFiveMove() {
             //     endColor: "#ccc"
             // }
         },
-        delay: "-1.3"
+        delay: "-1.3",
+        onStart: () => {
+            tl.set(scrollMarkerThird, {
+                backgroundColor: '#f2a07c'
+            })
+        }
     });
 
     tl
@@ -330,27 +367,24 @@ function sectionFiveMove() {
             autoAlpha: 0,
             delay: "-0.6"
         })
-        .to(sectionTitle_3,
-            {
+        .to(sectionTitle_3, {
                 right: '0',
                 autoAlpha: 0,
                 duration: "0.2",
                 delay: "-0.6"
             }
         )
-        .to(sectionFrontImage_3,
-            {
+        .to(sectionFrontImage_3, {
                 left: "0",
                 width: "118vw",
                 delay: "-0.6"
             }
         )
-        .to(sectionFrontTopImage,
-            {
+        .to(sectionFrontTopImage, {
                 left: "-10vw",
-                width: "120vw",
-                height: "70vh",
-                delay: "-0.4"
+                width: "127vw",
+                // height: "70vh",
+                delay: "-0.6"
             }
         )
     ;

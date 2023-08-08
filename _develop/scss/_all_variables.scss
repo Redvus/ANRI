@@ -6,9 +6,12 @@ $primary: #321557; //Темно-синий
 $secondary: #de0028; //Красный
 $third: #dad2dd; //15% $primary
 $fourth: #fff;
-$five: #f2a07c; //50% $secondary
+$five: #f2a07c; // 50% $secondary
+$six: #000000;
 $error: #ff9015;
 $success: #19d3c5;
+
+$temp: #64000f; //Красный
 
 $error: $third;
 $success: $fourth;
@@ -86,7 +89,7 @@ $objectScewReverseUp: skew(42deg);
 -------------------------------------------------- */
 $headerTopHeight: calc(#{$padding} * 2.5);
 $headerBottomHeight: calc(#{$padding} * 3.5);
-$headerLineHeight: calc(#{$padding} / 4);
+$headerLineHeight: calc(#{$padding} / 3);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLineHeight});
 
 $headerLogoWidth: 19rem;
@@ -323,7 +326,7 @@ $primary-font: $font-stack-helvetica;
 $heading-font: "Roboto Black";
 $heading-font-light: "Roboto Light";
 
-$body-font-color: $secondary;
+$body-font-color: lighten($six, 40%);
 
 $body-font-size: 1rem !default;
 $body-font-weight: normal !default;

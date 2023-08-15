@@ -2,7 +2,9 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-window.onresize = function(){ location.reload(); }
+function reloadWindowResize() {
+    window.onresize = function(){ location.reload(); }
+}
 
 function scrollSmooth() {
     const scrollLine = document.getElementById('scrollLine'),
@@ -101,20 +103,9 @@ function sectionTopMove() {
 
     tl
         .to(sectionFrontTopImage, {
-                left: "-10vw",
-                width: "70vw",
-                delay: "-0.2"
-            }
-        )
-        .from(sectionTitleLine, {
-            left: "100vw",
-            autoAlpha: 0,
-            delay: "-0.4"
-        })
-        .from(sectionTopText, {
-            x: '5vw',
-            autoAlpha: 0,
-            delay: "-0.4"
+            left: "-10vw",
+            width: "70vw",
+            delay: "-0.2"
         })
         .to(sectionFrontTopMaskRed, {
             // skewX: '0deg',
@@ -125,20 +116,29 @@ function sectionTopMove() {
             ease: 'power3.out'
         })
         .to(sectionFrontTopMask, {
-                // width: "40vw",
-                // autoAlpha: 0,
-                left: "-17vw",
-                duration: "1",
-                delay: "-1",
-                ease: 'power3.out'
-            })
+            // width: "40vw",
+            // autoAlpha: 0,
+            left: "-17vw",
+            duration: "1",
+            delay: "-0.9",
+            ease: 'power3.out'
+        })
+        .from(sectionTitleLine, {
+            left: "100vw",
+            autoAlpha: 0,
+            delay: "-0.9"
+        })
+        .from(sectionTopText, {
+            x: '5vw',
+            autoAlpha: 0,
+            delay: "-0.8"
+        })
         .to(sectionFrontImage_0, {
-                left: "-22vw",
-                // autoAlpha: 0,
-                duration: "1",
-                delay: "-1"
-            }
-        )
+            left: "-22vw",
+            // autoAlpha: 0,
+            duration: "1",
+            delay: "-1"
+        })
         .to(sectionTopTitle, {
             autoAlpha: 0,
             delay: "-1"
@@ -393,6 +393,7 @@ function sectionFiveMove() {
 }
 
 function initPage() {
+    reloadWindowResize();
     scrollSmooth();
     sectionTopMove();
     sectionTwoMove();
@@ -408,5 +409,5 @@ function initPageMobile() {
 if (document.body.clientWidth > 820 || screen.width > 820) {
     initPage();
 } else {
-    // initPageMobile();
+    initPageMobile();
 }

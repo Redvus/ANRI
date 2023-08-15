@@ -167,6 +167,21 @@
 				z-index: 1;
 			}
 
+			&--wide {
+
+				img {
+					display: none;
+					visibility: hidden;
+				}
+			}
+
+			&--short {
+
+				img {
+					display: none;
+					visibility: hidden;
+				}
+			}
 		}
 
 		&__title {
@@ -175,7 +190,7 @@
 			justify-content: center;
 			position: absolute;
 			//right: $headerMenuPadding;
-			right: 11vw;
+			right: $headerMenuPadding;
 			bottom: -0.75rem;
 			//background-color: $five;
 			text-align: right;
@@ -256,6 +271,47 @@
 				}
 			}
 		}
+
+		//@include grid-media($Medium) {
+		//
+		//	&__image {
+		//
+		//
+		//	}
+		//}
+
+		//@include grid-media($Large) {
+		//
+		//	&__image {
+		//
+		//		img {
+		//			object-position: center;
+		//			object-fit: contain;
+		//		}
+		//	}
+		//}
+
+		//@include grid-media($XLarge) {
+		//
+		//	&__image {
+		//
+		//		img {
+		//			object-position: center;
+		//			object-fit: contain;
+		//		}
+		//	}
+		//}
+		//
+		//@include grid-media($XXLarge) {
+		//
+		//	&__image {
+		//
+		//		img {
+		//			object-position: center;
+		//			object-fit: contain;
+		//		}
+		//	}
+		//}
 	}
 
 	&__description {

@@ -80,11 +80,13 @@ gulp.task('main-js', function(){
     .pipe(gulp.dest(path.dest.js));
 });
 
-gulp.task('page-js', function(){
+gulp.task('park-js', function(){
     return gulp.src([
-        path.src.js + 'page.js'
+        path.src.js + 'SectionAnimation.js',
+        path.src.js + 'SectionTopAnimation.js',
+        path.src.js + 'park.js'
     ])
-        // .pipe(concat('front.js'))
+        .pipe(concat('park.js'))
         .pipe(terser())
         .pipe(rename({suffix: "-min"}))
         .pipe(gulp.dest(path.dest.js));
@@ -174,7 +176,11 @@ gulp.task('watch', function() {
     gulp.watch(path.watch.scss + 'login.scss', gulp.series('login-scss'));
     gulp.watch(path.watch.js + 'vendor.js', gulp.series('vendor-js'));
     gulp.watch(path.watch.js + 'main.js', gulp.series('main-js'));
-    gulp.watch(path.watch.js + 'page.js', gulp.series('page-js'));
+    gulp.watch([
+        path.watch.js + 'park.js',
+        path.watch.js + 'SectionAnimation.js',
+        path.watch.js + 'SectionTopAnimation.js'],
+        gulp.series('park-js'));
     gulp.watch(path.watch.js + 'postGallery.js', gulp.series('postGallery-js'));
     gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
     gulp.watch(path.watch.js + 'process.js', gulp.series('process-js'));

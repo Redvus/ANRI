@@ -126,12 +126,13 @@ $structureLogoWidth: 20%;
 
 $sectionTopHeightMobile: 40vmax;
 
-/* News
+/* Section
 -------------------------------------------------- */
-$sectionNewsLiWidth: calc(#{$wrapperWidth} / 2);
-$sectionNewsLiHeight: calc(#{$wrapperWidth} / 5.5);
-
-$sectionNewsLiWidthPad: calc(#{$wrapperWidthPad} / 2);
+$sectionInfoWidth: 100vw;
+$sectionInfoHeight: 25vh;
+$sectionInfoTitleWidth: 38vw;
+$sectionInfoTitleHeight: 10vh;
+$sectionInfoImageWidth: 50vw;
 
 /* Mobile
 -------------------------------------------------- */

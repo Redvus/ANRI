@@ -1,6 +1,15 @@
 class SectionAnimation {
 
-    sectionChange(sectionID, sectionChangeImage, sectionNextImage, sectionScrollMarker) {
+    sectionChange(sectionID,
+                  sectionChangeImage,
+                  sectionNextImage,
+                  sectionScrollMarker,
+                  sectionInfoTitleChange,
+                  sectionInfoTitleNext,
+                  sectionInfoImageChange,
+                  sectionInfoImageNext,
+                  sectionInfoDescriptionChange,
+                  sectionInfoDescriptionNext) {
         const sectionTopImage = document.querySelector('.section-top__image');
         let tl = new gsap.timeline({
             scrollTrigger: {
@@ -15,7 +24,8 @@ class SectionAnimation {
             delay: "-1.3",
             onStart: () => {
                 tl.set(sectionScrollMarker, {
-                    backgroundColor: '#f2a07c'
+                    backgroundColor: '#f2a07c',
+                    delay: "-0.3"
                 })
             }
         });
@@ -38,28 +48,116 @@ class SectionAnimation {
                 ease: "sine.inOut",
                 delay: "-0.6"
             })
-        // .to(sectionTitle_1,
-        //     {
-        //         right: '15vw',
-        //         autoAlpha: 0,
-        //         duration: "0.4",
-        //         delay: "-0.4",
-        //         ease: "sine.inOut"
-        //     }
-        // )
-        // .fromTo(sectionTitle_2,
-        //     {
-        //         right: '0',
-        //         autoAlpha: 0,
-        //         delay: "-0.4"
-        //     },
-        //     {
-        //         right: '11vw',
-        //         autoAlpha: 1,
-        //         duration: "0.3",
-        //         delay: "-0.4"
-        //     }
-        // )
+            .fromTo(sectionInfoTitleNext,
+                {
+                    right: "-5vw",
+                    autoAlpha: 0
+                },
+                {
+                    right: "-2.5vw",
+                    autoAlpha: 1,
+                    ease: "sine.inOut",
+                    delay: "-0.6"
+                }
+            )
+            .to(sectionInfoTitleChange, {
+                right: "+=2.5vw",
+                autoAlpha: 0,
+                ease: "sine.inOut",
+                delay: "-0.6"
+            })
+            .fromTo(sectionInfoImageNext,
+                {
+                    right: "-5vw",
+                    autoAlpha: 0
+                },
+                {
+                    right: "-2.5vw",
+                    autoAlpha: 1,
+                    ease: "sine.inOut",
+                    delay: "-0.6"
+                }
+            )
+            .to(sectionInfoImageChange, {
+                right: "+=2.5vw",
+                autoAlpha: 0,
+                ease: "sine.inOut",
+                delay: "-0.6"
+            })
+            .fromTo(sectionInfoDescriptionNext,
+                {
+                    right: "0",
+                    autoAlpha: 0
+                },
+                {
+                    right: "2.5vw",
+                    autoAlpha: 1,
+                    ease: "sine.inOut",
+                    delay: "-0.6"
+                }
+            )
+            .to(sectionInfoDescriptionChange, {
+                right: "+=2.5vw",
+                autoAlpha: 0,
+                ease: "sine.inOut",
+                delay: "-0.6"
+            })
+        ;
+
+        ScrollTrigger.refresh();
+    }
+
+    sectionInfoChange(sectionInfoID, sectionInfoTitleChange, sectionInfoTitleNext, sectionInfoImageChange, sectionInfoImageNext) {
+        let tl = new gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionInfoID,
+                scroller: wrapper,
+                scrub: false,
+                // pin: true,
+                start: "top top",
+                end: "100% top",
+                toggleActions: "play none none reverse"
+            },
+            delay: "-1.3"
+        });
+
+        tl
+            .fromTo(sectionInfoTitleNext,
+                {
+                    left: "3vw",
+                    autoAlpha: 0
+                },
+                {
+                    left: "0",
+                    autoAlpha: 1,
+                    ease: "sine.inOut",
+                    delay: "-0.6"
+                }
+            )
+            .to(sectionInfoTitleChange, {
+                left: "-=3vw",
+                autoAlpha: 0,
+                ease: "sine.inOut",
+                delay: "-0.6"
+            })
+            .fromTo(sectionInfoImageNext,
+                {
+                    left: "3vw",
+                    autoAlpha: 0
+                },
+                {
+                    left: "0",
+                    autoAlpha: 1,
+                    ease: "sine.inOut",
+                    delay: "-0.6"
+                }
+            )
+            .to(sectionInfoImageChange, {
+                left: "-=3vw",
+                autoAlpha: 0,
+                ease: "sine.inOut",
+                delay: "-0.6"
+            })
         ;
 
         ScrollTrigger.refresh();

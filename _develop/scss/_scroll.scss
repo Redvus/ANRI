@@ -166,7 +166,7 @@ html {
 }
 
 #scrollMarkerPark_3 {
-    left: 33%;
+    left: 32%;
 }
 
 #scrollMarkerPark_4 {
@@ -191,4 +191,13 @@ html {
 
 #scrollMarkerPark_9 {
     left: 91%;
+}
+
+#scrollMarkerPark_10 {
+    left: calc(100% - #{$headerLineHeight});
+}
+
+#scrollMarkerPark_11 {
+    display: none;
+    visibility: hidden;
 }

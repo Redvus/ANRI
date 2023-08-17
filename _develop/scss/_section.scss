@@ -125,7 +125,7 @@
 			left: 7rem;
 			transform: $objectScew;
 			transform-origin: 100% 0;
-			z-index: 5;
+			z-index: 215;
 
 			&_red {
 				content: "";
@@ -160,7 +160,7 @@
 				display: block;
 				position: absolute;
 				top: 0;
-				left: -11vw;
+				left: -6vw;
 				object-position: center;
 				object-fit: cover;
 				transform: skew(22deg);
@@ -181,6 +181,10 @@
 					display: none;
 					visibility: hidden;
 				}
+			}
+
+			&--dark {
+				background-color: lighten($six, 20%);
 			}
 		}
 
@@ -326,6 +330,10 @@
 
 	&-last {
 		height: 100vh;
+
+		&--short {
+			height: 60vh;
+		}
 	}
 
 	&-title {

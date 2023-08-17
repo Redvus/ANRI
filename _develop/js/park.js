@@ -68,6 +68,7 @@ const sectionChangeContent = new SectionAnimation(),
     sectionPark_9 = document.getElementById('sectionPark_9'),
     sectionPark_10 = document.getElementById('sectionPark_10'),
     sectionPark_11 = document.getElementById('sectionPark_11'),
+    sectionPark_12 = document.getElementById('sectionPark_12'),
     sectionParkImage_0 = document.getElementById('sectionParkImage_0'),
     sectionParkImage_1 = document.getElementById('sectionParkImage_1'),
     sectionParkImage_2 = document.getElementById('sectionParkImage_2'),
@@ -80,6 +81,7 @@ const sectionChangeContent = new SectionAnimation(),
     sectionParkImage_9 = document.getElementById('sectionParkImage_9'),
     sectionParkImage_10 = document.getElementById('sectionParkImage_10'),
     sectionParkImage_11 = document.getElementById('sectionParkImage_11'),
+    sectionParkImage_12 = document.getElementById('sectionParkImage_12'),
     sectionTopTitle = document.querySelector('.section-top__title'),
     scrollMarkerPark_0 = document.getElementById('scrollMarkerPark_0'),
     scrollMarkerPark_1 = document.getElementById('scrollMarkerPark_1'),
@@ -91,7 +93,8 @@ const sectionChangeContent = new SectionAnimation(),
     scrollMarkerPark_7 = document.getElementById('scrollMarkerPark_7'),
     scrollMarkerPark_8 = document.getElementById('scrollMarkerPark_8'),
     scrollMarkerPark_9 = document.getElementById('scrollMarkerPark_9'),
-    scrollMarkerPark_10 = document.getElementById('scrollMarkerPark_10')
+    scrollMarkerPark_10 = document.getElementById('scrollMarkerPark_10'),
+    scrollMarkerPark_11 = document.getElementById('scrollMarkerPark_11')
 ;
 
 // Section Info
@@ -107,6 +110,7 @@ const sectionInfoTitle_0 = document.getElementById('sectionInfoTitle_0'),
     sectionInfoTitle_9 = document.getElementById('sectionInfoTitle_9'),
     sectionInfoTitle_10 = document.getElementById('sectionInfoTitle_10'),
     sectionInfoTitle_11 = document.getElementById('sectionInfoTitle_11'),
+    sectionInfoTitle_12 = document.getElementById('sectionInfoTitle_12'),
     sectionInfoImage_0 = document.getElementById('sectionInfoImage_0'),
     sectionInfoImage_1 = document.getElementById('sectionInfoImage_1'),
     sectionInfoImage_2 = document.getElementById('sectionInfoImage_2'),
@@ -119,6 +123,7 @@ const sectionInfoTitle_0 = document.getElementById('sectionInfoTitle_0'),
     sectionInfoImage_9 = document.getElementById('sectionInfoImage_9'),
     sectionInfoImage_10 = document.getElementById('sectionInfoImage_10'),
     sectionInfoImage_11 = document.getElementById('sectionInfoImage_11'),
+    sectionInfoImage_12 = document.getElementById('sectionInfoImage_12'),
     sectionInfoDescription_0 = document.getElementById('sectionInfoDescription_0'),
     sectionInfoDescription_1 = document.getElementById('sectionInfoDescription_1'),
     sectionInfoDescription_2 = document.getElementById('sectionInfoDescription_2'),
@@ -130,7 +135,8 @@ const sectionInfoTitle_0 = document.getElementById('sectionInfoTitle_0'),
     sectionInfoDescription_8 = document.getElementById('sectionInfoDescription_8'),
     sectionInfoDescription_9 = document.getElementById('sectionInfoDescription_9'),
     sectionInfoDescription_10 = document.getElementById('sectionInfoDescription_10'),
-    sectionInfoDescription_11 = document.getElementById('sectionInfoDescription_11')
+    sectionInfoDescription_11 = document.getElementById('sectionInfoDescription_11'),
+    sectionInfoDescription_12 = document.getElementById('sectionInfoDescription_12')
 ;
 
 function sectionAnimLoad() {
@@ -259,19 +265,21 @@ function sectionAnimLoad() {
         sectionInfoImage_11,
         sectionInfoDescription_10,
         sectionInfoDescription_11);
-    sectionChangeContent.sectionChange(
-        sectionPark_11,
-        sectionParkImage_10,
-        sectionParkImage_11,
-        scrollMarkerPark_10,
-        sectionInfoDescription_10,
-        sectionInfoDescription_11);
+}
+
+function keyLock() {
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'PageDown' || e.key === 'PageUp' || e.key === 'Home' || e.key === 'End') {
+            location.reload();
+        }
+    }, true);
 }
 
 function initPage() {
     scrollSmooth();
     reloadWindowResize();
     sectionAnimLoad();
+    keyLock();
 }
 
 function initPageMobile() {

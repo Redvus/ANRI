@@ -122,7 +122,7 @@ html {
     z-index: 9996;
 
     &__marker {
-        width: calc(#{$headerLineHeight} / 1.5);
+        width: $headerLineHeight;
         height: $headerLineHeight;
         display: block;
         position: fixed;
@@ -158,43 +158,43 @@ html {
 }
 
 #scrollMarkerPark_1 {
-    left: 14%;
+    left: 12%;
 }
 
 #scrollMarkerPark_2 {
-    left: 23%;
+    left: 21%;
 }
 
 #scrollMarkerPark_3 {
-    left: 32%;
+    left: 30%;
 }
 
 #scrollMarkerPark_4 {
-    left: 41%;
+    left: 39%;
 }
 
 #scrollMarkerPark_5 {
-    left: 51%;
+    left: 48%;
 }
 
 #scrollMarkerPark_6 {
-    left: 61%;
+    left: 56%;
 }
 
 #scrollMarkerPark_7 {
-    left: 71%;
+    left: 64%;
 }
 
 #scrollMarkerPark_8 {
-    left: 81%;
+    left: 73%;
 }
 
 #scrollMarkerPark_9 {
-    left: 90%;
+    left: 82%;
 }
 
 #scrollMarkerPark_10 {
-    left: calc(100% - #{$headerLineHeight});
+    left: 91%;
 }
 
 #scrollMarkerPark_11 {

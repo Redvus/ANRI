@@ -89,7 +89,7 @@ $objectScewReverseUp: skew(42deg);
 -------------------------------------------------- */
 $headerTopHeight: calc(#{$padding} * 2);
 $headerBottomHeight: calc(#{$padding} * 3.5);
-$headerLineHeight: calc(#{$padding} / 2);
+$headerLineHeight: calc(#{$padding} / 2.5);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLineHeight});
 
 $headerLogoWidth: 19rem;

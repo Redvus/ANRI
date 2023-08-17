@@ -92,17 +92,16 @@ gulp.task('park-js', function(){
         .pipe(gulp.dest(path.dest.js));
 });
 
-gulp.task('postGallery-js', function () {
+gulp.task('projects-js', function(){
     return gulp.src([
-        path.src.npm + 'photoswipe/dist/' + 'photoswipe.js',
-        path.src.npm + 'photoswipe/dist/' + 'photoswipe-ui-default.js',
-        path.src.js + 'pagephotoswipe.js',
-        path.src.js + 'postGallery.js'
+        path.src.js + 'SectionAnimation.js',
+        path.src.js + 'SectionTopAnimation.js',
+        path.src.js + 'projects.js'
     ])
-    .pipe(concat('postGallery.js'))
-    .pipe(terser())
-    .pipe(rename({ suffix: "-min" }))
-    .pipe(gulp.dest(path.dest.js));
+        .pipe(concat('projects.js'))
+        .pipe(terser())
+        .pipe(rename({suffix: "-min"}))
+        .pipe(gulp.dest(path.dest.js));
 });
 
 gulp.task('contact-js', function () {
@@ -115,17 +114,6 @@ gulp.task('contact-js', function () {
     .pipe(concat('contact.js'))
     .pipe(terser())
     .pipe(rename({ suffix: "-min" }))
-    .pipe(gulp.dest(path.dest.js));
-});
-
-gulp.task('process-js', function(){
-    return gulp.src([
-        path.src.js + 'masterslider.js',
-        path.src.js + 'process.js'
-    ])
-    .pipe(concat('process.js'))
-    .pipe(terser())
-    .pipe(rename({suffix: "-min"}))
     .pipe(gulp.dest(path.dest.js));
 });
 
@@ -181,9 +169,12 @@ gulp.task('watch', function() {
         path.watch.js + 'SectionAnimation.js',
         path.watch.js + 'SectionTopAnimation.js'],
         gulp.series('park-js'));
-    gulp.watch(path.watch.js + 'postGallery.js', gulp.series('postGallery-js'));
+    gulp.watch([
+        path.watch.js + 'projects.js',
+        path.watch.js + 'SectionAnimation.js',
+        path.watch.js + 'SectionTopAnimation.js'],
+        gulp.series('projects-js'));
     gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
-    gulp.watch(path.watch.js + 'process.js', gulp.series('process-js'));
     gulp.watch(path.watch.js + 'preloader.js', gulp.series('preloader-js'));
     gulp.watch(path.watch.js + 'jgrowl.js', gulp.series('jgrowl-js'));
 

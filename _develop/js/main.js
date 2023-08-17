@@ -392,6 +392,14 @@ function sectionFiveMove() {
     ScrollTrigger.refresh();
 }
 
+function keyLock() {
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'PageDown' || e.key === 'PageUp' || e.key === 'Home' || e.key === 'End') {
+            location.reload();
+        }
+    }, true);
+}
+
 function initPage() {
     reloadWindowResize();
     scrollSmooth();
@@ -400,6 +408,7 @@ function initPage() {
     sectionThreeMove();
     sectionFourMove();
     sectionFiveMove();
+    keyLock();
 }
 
 function initPageMobile() {

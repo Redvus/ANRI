@@ -121,7 +121,7 @@
 			display: block;
 			position: fixed;
 			overflow: hidden;
-			background-color: $primary;
+			background-color: $secondary;
 			left: 7rem;
 			transform: $objectScew;
 			transform-origin: 100% 0;
@@ -134,7 +134,7 @@
 				display: block;
 				position: fixed;
 				overflow: hidden;
-				background-color: rgba($secondary, 0.4);
+				background-color: rgba($primary, 0.6);
 				left: -8.4rem;
 				transform: $objectScewReverseUp;
 				transform-origin: 100% 0;

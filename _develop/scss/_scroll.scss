@@ -122,7 +122,7 @@ html {
     z-index: 9996;
 
     &__marker {
-        width: $headerLineHeight;
+        width: calc(#{$headerLineHeight} / 1.5);
         height: $headerLineHeight;
         display: block;
         position: fixed;
@@ -190,7 +190,7 @@ html {
 }
 
 #scrollMarkerPark_9 {
-    left: 91%;
+    left: 90%;
 }
 
 #scrollMarkerPark_10 {

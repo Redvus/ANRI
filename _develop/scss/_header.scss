@@ -31,22 +31,22 @@
 		overflow: hidden;
 
 		&__adress {
-			width: calc(100% - #{$headerMenuPadding});
+			width: 16rem; //calc(100% - #{$headerMenuPadding})
 			height: 100%;
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			position: relative;
-			align-items: flex-end;
-			justify-content: flex-end;
-			padding-right: $headerMenuPadding;
+			align-items: flex-start;
+			justify-content: flex-start;
+			padding-left: calc(#{$padding} * 2); //$headerMenuPadding
 
 			li {
 				width: auto;
-				height: $headerTopHeight;
+				//height: $headerTopHeight;
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				margin: 0 0 0 $padding;
+				//margin: 0 0 0 $padding;
 				font-size: $font-size-small;
 				text-align: right;
 
@@ -158,7 +158,8 @@
 		width: calc(100% - (#{$headerLogoWidth}) - #{$headerMenuPadding});
 		height: $headerBottomHeight;
 		display: flex;
-		justify-content: flex-end;
+		flex-direction: row-reverse;
+		justify-content: space-between;
 		position: relative;
 		right: 0;
 		padding: 0 $headerMenuPadding 0 0;

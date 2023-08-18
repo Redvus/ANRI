@@ -104,6 +104,18 @@ gulp.task('projects-js', function(){
         .pipe(gulp.dest(path.dest.js));
 });
 
+gulp.task('engineering-js', function(){
+    return gulp.src([
+        path.src.js + 'SectionAnimation.js',
+        path.src.js + 'SectionTopAnimation.js',
+        path.src.js + 'engineering.js'
+    ])
+        .pipe(concat('engineering.js'))
+        .pipe(terser())
+        .pipe(rename({suffix: "-min"}))
+        .pipe(gulp.dest(path.dest.js));
+});
+
 gulp.task('contact-js', function () {
     return gulp.src([
         // path.src.js + 'nav.js',
@@ -174,6 +186,11 @@ gulp.task('watch', function() {
         path.watch.js + 'SectionAnimation.js',
         path.watch.js + 'SectionTopAnimation.js'],
         gulp.series('projects-js'));
+    gulp.watch([
+            path.watch.js + 'engineering.js',
+            path.watch.js + 'SectionAnimation.js',
+            path.watch.js + 'SectionTopAnimation.js'],
+        gulp.series('engineering-js'));
     gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
     gulp.watch(path.watch.js + 'preloader.js', gulp.series('preloader-js'));
     gulp.watch(path.watch.js + 'jgrowl.js', gulp.series('jgrowl-js'));

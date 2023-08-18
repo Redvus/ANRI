@@ -186,6 +186,13 @@
 			&--dark {
 				background-color: lighten($six, 20%);
 			}
+
+			&--left {
+
+				img {
+					left: -10vw;
+				}
+			}
 		}
 
 		&__title {
@@ -488,12 +495,38 @@
 			transform: $objectScew;
 			z-index: 1;
 
+			&--single {
+				width: calc(100% - #{$headerMenuPadding} - (#{$padding} * 4));
+				right: 13rem;
+				background-color: #dfdfe8;
+			}
+
 			span {
 				position: fixed;
-				font-size: $font-size-small;
+				//font-size: $font-size-base;
 				line-height: calc(#{$body-line-height} - 0.2);
 				transform: $objectScewReverse;
 				opacity: 0;
+			}
+		}
+
+		&__line {
+			height: auto;
+			display: flex;
+			flex-direction: row;
+			position: fixed;
+			bottom: 0;
+			right: -8rem;
+			transform-origin: 0 100%;
+			transform: $objectScew;
+
+			li {
+				width: calc(#{$padding} * 2);
+				height: 60vh;
+				display: block;
+				position: relative;
+				background-color: rgba($five, 0.5);
+				margin-right: calc(#{$padding} * 2);
 			}
 		}
 	}

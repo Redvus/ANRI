@@ -327,7 +327,7 @@ $primary-font: $font-stack-helvetica;
 $heading-font: "Roboto Black";
 $heading-font-light: "Roboto Light";
 
-$body-font-color: lighten($six, 40%);
+$body-font-color: $primary;
 
 $body-font-size: 1rem !default;
 $body-font-weight: normal !default;

@@ -111,7 +111,9 @@ const wrapper = document.querySelector('.wrapper'),
     sectionProjectInfoDescription_10 = document.getElementById('sectionProjectInfoDescription_10'),
     sectionProjectInfoDescription_11 = document.getElementById('sectionProjectInfoDescription_11'),
     sectionProjectInfoDescription_12 = document.getElementById('sectionProjectInfoDescription_12'),
-    sectionProjectInfoDescription_13 = document.getElementById('sectionProjectInfoDescription_13')
+    sectionProjectInfoDescription_13 = document.getElementById('sectionProjectInfoDescription_13'),
+    sectionInfoDescriptionSingle = document.querySelector('.section-info__description--single'),
+    sectionInfoLine = document.querySelector('.section-info__line')
 ;
 
 function sectionProjectsAnimLoad() {
@@ -218,6 +220,48 @@ function sectionProjectsAnimLoad() {
     );
 }
 
+function sectionTopChangeInfoColorLoad() {
+    let tl = new gsap.timeline({
+        scrollTrigger: {
+            trigger: sectionProject_0,
+            scroller: wrapper,
+            scrub: true,
+            start: "top 50vh",
+            end: "100% top",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    tl
+        .from([sectionInfoDescriptionSingle, sectionInfoLine], {
+            autoAlpha: 0,
+            duration: "0.3"
+        })
+    ;
+    ScrollTrigger.refresh();
+}
+
+function sectionTopChangeInfoColorHide() {
+    let tl = new gsap.timeline({
+        scrollTrigger: {
+            trigger: sectionProject_11,
+            scroller: wrapper,
+            scrub: false,
+            start: "top 30vh",
+            end: "100% top",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    tl
+        .to([sectionInfoDescriptionSingle, sectionInfoLine], {
+            autoAlpha: 0,
+            duration: "0.3"
+        })
+    ;
+    ScrollTrigger.refresh();
+}
+
 function keyLock() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'PageDown' || e.key === 'PageUp' || e.key === 'Home' || e.key === 'End') {
@@ -231,6 +275,8 @@ function initPage() {
     scrollSmooth();
     reloadWindowResize();
     sectionProjectsAnimLoad();
+    sectionTopChangeInfoColorLoad();
+    sectionTopChangeInfoColorHide();
 }
 
 function initPageMobile() {

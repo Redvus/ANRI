@@ -116,6 +116,18 @@ gulp.task('engineering-js', function(){
         .pipe(gulp.dest(path.dest.js));
 });
 
+gulp.task('stividor-js', function(){
+    return gulp.src([
+        path.src.js + 'SectionAnimation.js',
+        path.src.js + 'SectionTopAnimation.js',
+        path.src.js + 'stividor.js'
+    ])
+        .pipe(concat('stividor.js'))
+        .pipe(terser())
+        .pipe(rename({suffix: "-min"}))
+        .pipe(gulp.dest(path.dest.js));
+});
+
 gulp.task('contact-js', function () {
     return gulp.src([
         // path.src.js + 'nav.js',
@@ -129,15 +141,15 @@ gulp.task('contact-js', function () {
     .pipe(gulp.dest(path.dest.js));
 });
 
-gulp.task('jgrowl-js', function(){
-    return gulp.src([
-        path.src.js + 'jgrowl.js'
-    ])
-    .pipe(concat('jgrowl.js'))
-    .pipe(terser())
-    .pipe(rename({suffix: "-min"}))
-    .pipe(gulp.dest(path.dest.ajaxLib));
-});
+// gulp.task('jgrowl-js', function(){
+//     return gulp.src([
+//         path.src.js + 'jgrowl.js'
+//     ])
+//     .pipe(concat('jgrowl.js'))
+//     .pipe(terser())
+//     .pipe(rename({suffix: "-min"}))
+//     .pipe(gulp.dest(path.dest.ajaxLib));
+// });
 
 gulp.task('vendor-js', function(){
     return gulp.src([
@@ -191,9 +203,14 @@ gulp.task('watch', function() {
             path.watch.js + 'SectionAnimation.js',
             path.watch.js + 'SectionTopAnimation.js'],
         gulp.series('engineering-js'));
+    gulp.watch([
+            path.watch.js + 'stividor.js',
+            path.watch.js + 'SectionAnimation.js',
+            path.watch.js + 'SectionTopAnimation.js'],
+        gulp.series('stividor-js'));
     gulp.watch(path.watch.js + 'contact.js', gulp.series('contact-js'));
     gulp.watch(path.watch.js + 'preloader.js', gulp.series('preloader-js'));
-    gulp.watch(path.watch.js + 'jgrowl.js', gulp.series('jgrowl-js'));
+    // gulp.watch(path.watch.js + 'jgrowl.js', gulp.series('jgrowl-js'));
 
     // gulp.watch(path.dest.css + '/js/**/*.js', browserSync.reload);
 });

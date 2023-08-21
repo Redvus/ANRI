@@ -1,57 +1,5 @@
 'use strict';
 
-gsap.registerPlugin(ScrollTrigger);
-
-function reloadWindowResize() {
-    window.onresize = function () {
-        location.reload();
-    }
-}
-
-function scrollSmooth() {
-    const scrollLine = document.getElementById('scrollLine'),
-        wrapper = document.querySelector('.wrapper');
-    const locoScroll = new LocomotiveScroll({
-        el: wrapper,
-        smooth: true,
-        multiplier: 0.3
-    });
-
-
-    locoScroll.on("scroll", ScrollTrigger.update);
-
-    ScrollTrigger.scrollerProxy(wrapper, {
-        scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        },
-
-        getBoundingClientRect() {
-            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-        },
-        // pinType: document.querySelector(".wrapper-info").style.transform ? "transform" : "fixed"
-    });
-
-    gsap.from(scrollLine, {
-        scrollTrigger: {
-            trigger: scrollLine,
-            scroller: wrapper,
-            scrub: true,
-            start: "0 0",
-            end: () => `+=${wrapper.offsetHeight - window.innerHeight}`,
-            // markers: {
-            // 	startColor: "#ccc",
-            // 	endColor: "#ccc"
-            // }
-        },
-        scaleX: 0,
-        transformOrigin: "0 0",
-        ease: "none"
-    });
-
-    ScrollTrigger.addEventListener("refreshInit", () => locoScroll.update());
-    ScrollTrigger.refresh();
-}
-
 // Section Change
 const sectionChangeContent = new SectionAnimation(),
     sectionTopChangeContent = new SectionTopAnimation(),
@@ -67,8 +15,6 @@ const sectionChangeContent = new SectionAnimation(),
     sectionPark_8 = document.getElementById('sectionPark_8'),
     sectionPark_9 = document.getElementById('sectionPark_9'),
     sectionPark_10 = document.getElementById('sectionPark_10'),
-    sectionPark_11 = document.getElementById('sectionPark_11'),
-    sectionPark_12 = document.getElementById('sectionPark_12'),
     sectionParkImage_0 = document.getElementById('sectionParkImage_0'),
     sectionParkImage_1 = document.getElementById('sectionParkImage_1'),
     sectionParkImage_2 = document.getElementById('sectionParkImage_2'),
@@ -81,7 +27,6 @@ const sectionChangeContent = new SectionAnimation(),
     sectionParkImage_9 = document.getElementById('sectionParkImage_9'),
     sectionParkImage_10 = document.getElementById('sectionParkImage_10'),
     sectionParkImage_11 = document.getElementById('sectionParkImage_11'),
-    sectionParkImage_12 = document.getElementById('sectionParkImage_12'),
     sectionTopTitle = document.querySelector('.section-top__title'),
     scrollMarkerPark_0 = document.getElementById('scrollMarkerPark_0'),
     scrollMarkerPark_1 = document.getElementById('scrollMarkerPark_1'),
@@ -110,7 +55,6 @@ const sectionInfoTitle_0 = document.getElementById('sectionInfoTitle_0'),
     sectionInfoTitle_9 = document.getElementById('sectionInfoTitle_9'),
     sectionInfoTitle_10 = document.getElementById('sectionInfoTitle_10'),
     sectionInfoTitle_11 = document.getElementById('sectionInfoTitle_11'),
-    sectionInfoTitle_12 = document.getElementById('sectionInfoTitle_12'),
     sectionInfoImage_0 = document.getElementById('sectionInfoImage_0'),
     sectionInfoImage_1 = document.getElementById('sectionInfoImage_1'),
     sectionInfoImage_2 = document.getElementById('sectionInfoImage_2'),
@@ -123,7 +67,6 @@ const sectionInfoTitle_0 = document.getElementById('sectionInfoTitle_0'),
     sectionInfoImage_9 = document.getElementById('sectionInfoImage_9'),
     sectionInfoImage_10 = document.getElementById('sectionInfoImage_10'),
     sectionInfoImage_11 = document.getElementById('sectionInfoImage_11'),
-    sectionInfoImage_12 = document.getElementById('sectionInfoImage_12'),
     sectionInfoDescription_0 = document.getElementById('sectionInfoDescription_0'),
     sectionInfoDescription_1 = document.getElementById('sectionInfoDescription_1'),
     sectionInfoDescription_2 = document.getElementById('sectionInfoDescription_2'),
@@ -135,8 +78,7 @@ const sectionInfoTitle_0 = document.getElementById('sectionInfoTitle_0'),
     sectionInfoDescription_8 = document.getElementById('sectionInfoDescription_8'),
     sectionInfoDescription_9 = document.getElementById('sectionInfoDescription_9'),
     sectionInfoDescription_10 = document.getElementById('sectionInfoDescription_10'),
-    sectionInfoDescription_11 = document.getElementById('sectionInfoDescription_11'),
-    sectionInfoDescription_12 = document.getElementById('sectionInfoDescription_12')
+    sectionInfoDescription_11 = document.getElementById('sectionInfoDescription_11')
 ;
 
 function sectionAnimLoad() {
@@ -267,27 +209,16 @@ function sectionAnimLoad() {
         sectionInfoDescription_11);
 }
 
-function keyLock() {
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'PageDown' || e.key === 'PageUp' || e.key === 'Home' || e.key === 'End') {
-            location.reload();
-        }
-    }, true);
-}
-
-function initPage() {
-    scrollSmooth();
-    reloadWindowResize();
+function initPark() {
     sectionAnimLoad();
-    keyLock();
 }
 
-function initPageMobile() {
+function initParkMobile() {
 
 }
 
 if (document.body.clientWidth > 820 || screen.width > 820) {
-    initPage();
+    initPark();
 } else {
-    initPageMobile();
+    initParkMobile();
 }

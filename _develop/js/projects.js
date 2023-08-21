@@ -1,57 +1,5 @@
 'use strict';
 
-gsap.registerPlugin(ScrollTrigger);
-
-function reloadWindowResize() {
-    window.onresize = function () {
-        location.reload();
-    }
-}
-
-function scrollSmooth() {
-    const scrollLine = document.getElementById('scrollLine'),
-        wrapper = document.querySelector('.wrapper');
-    const locoScroll = new LocomotiveScroll({
-        el: wrapper,
-        smooth: true,
-        multiplier: 0.3
-    });
-
-
-    locoScroll.on("scroll", ScrollTrigger.update);
-
-    ScrollTrigger.scrollerProxy(wrapper, {
-        scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        },
-
-        getBoundingClientRect() {
-            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-        },
-        // pinType: document.querySelector(".wrapper-info").style.transform ? "transform" : "fixed"
-    });
-
-    gsap.from(scrollLine, {
-        scrollTrigger: {
-            trigger: scrollLine,
-            scroller: wrapper,
-            scrub: true,
-            start: "0 0",
-            end: () => `+=${wrapper.offsetHeight - window.innerHeight}`,
-            // markers: {
-            // 	startColor: "#ccc",
-            // 	endColor: "#ccc"
-            // }
-        },
-        scaleX: 0,
-        transformOrigin: "0 0",
-        ease: "none"
-    });
-
-    ScrollTrigger.addEventListener("refreshInit", () => locoScroll.update());
-    ScrollTrigger.refresh();
-}
-
 const wrapper = document.querySelector('.wrapper'),
     sectionChangeContent = new SectionAnimation(),
     sectionTopChangeContent = new SectionTopAnimation(),
@@ -68,8 +16,6 @@ const wrapper = document.querySelector('.wrapper'),
     sectionProject_9 = document.getElementById('sectionProject_9'),
     sectionProject_10 = document.getElementById('sectionProject_10'),
     sectionProject_11 = document.getElementById('sectionProject_11'),
-    sectionProject_12 = document.getElementById('sectionProject_12'),
-    sectionProject_13 = document.getElementById('sectionProject_13'),
     sectionProjectImage_0 = document.getElementById('sectionProjectImage_0'),
     sectionProjectImage_1 = document.getElementById('sectionProjectImage_1'),
     sectionProjectImage_2 = document.getElementById('sectionProjectImage_2'),
@@ -83,7 +29,6 @@ const wrapper = document.querySelector('.wrapper'),
     sectionProjectImage_10 = document.getElementById('sectionProjectImage_10'),
     sectionProjectImage_11 = document.getElementById('sectionProjectImage_11'),
     sectionProjectImage_12 = document.getElementById('sectionProjectImage_12'),
-    sectionProjectImage_13 = document.getElementById('sectionProjectImage_13'),
     scrollMarkerProject_0 = document.getElementById('scrollMarkerProject_0'),
     scrollMarkerProject_1 = document.getElementById('scrollMarkerProject_1'),
     scrollMarkerProject_2 = document.getElementById('scrollMarkerProject_2'),
@@ -97,7 +42,6 @@ const wrapper = document.querySelector('.wrapper'),
     scrollMarkerProject_10 = document.getElementById('scrollMarkerProject_10'),
     scrollMarkerProject_11 = document.getElementById('scrollMarkerProject_11'),
     scrollMarkerProject_12 = document.getElementById('scrollMarkerProject_12'),
-    scrollMarkerProject_13 = document.getElementById('scrollMarkerProject_13'),
     sectionProjectInfoDescription_0 = document.getElementById('sectionProjectInfoDescription_0'),
     sectionProjectInfoDescription_1 = document.getElementById('sectionProjectInfoDescription_1'),
     sectionProjectInfoDescription_2 = document.getElementById('sectionProjectInfoDescription_2'),
@@ -111,7 +55,6 @@ const wrapper = document.querySelector('.wrapper'),
     sectionProjectInfoDescription_10 = document.getElementById('sectionProjectInfoDescription_10'),
     sectionProjectInfoDescription_11 = document.getElementById('sectionProjectInfoDescription_11'),
     sectionProjectInfoDescription_12 = document.getElementById('sectionProjectInfoDescription_12'),
-    sectionProjectInfoDescription_13 = document.getElementById('sectionProjectInfoDescription_13'),
     sectionInfoDescriptionSingle = document.querySelector('.section-info__description--single'),
     sectionInfoLine = document.querySelector('.section-info__line')
 ;
@@ -262,29 +205,18 @@ function sectionTopChangeInfoColorHide() {
     ScrollTrigger.refresh();
 }
 
-function keyLock() {
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'PageDown' || e.key === 'PageUp' || e.key === 'Home' || e.key === 'End') {
-            location.reload();
-        }
-    }, true);
-}
-
-function initPage() {
-    keyLock();
-    scrollSmooth();
-    reloadWindowResize();
+function initProject() {
     sectionProjectsAnimLoad();
     sectionTopChangeInfoColorLoad();
     sectionTopChangeInfoColorHide();
 }
 
-function initPageMobile() {
+function initProjectMobile() {
 
 }
 
 if (document.body.clientWidth > 820 || screen.width > 820) {
-    initPage();
+    initProject();
 } else {
-    initPageMobile();
+    initProjectMobile();
 }

@@ -10,7 +10,6 @@ class SectionAnimation {
                   sectionInfoImageNext,
                   sectionInfoDescriptionChange,
                   sectionInfoDescriptionNext) {
-        const sectionTopImage = document.querySelector('.section-top__image');
         let tl = new gsap.timeline({
             scrollTrigger: {
                 trigger: sectionID,

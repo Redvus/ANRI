@@ -309,3 +309,25 @@ html {
     display: none;
     visibility: hidden;
 }
+
+// Section Stividor
+#scrollMarkerStividor_0 {
+    left: calc(11% - #{$headerLineHeight});
+}
+
+#scrollMarkerStividor_1 {
+    left: calc(33% - #{$headerLineHeight});
+}
+
+#scrollMarkerStividor_2 {
+    left: calc(55% - #{$headerLineHeight});
+}
+
+#scrollMarkerStividor_3 {
+    left: calc(78% - #{$headerLineHeight});
+}
+
+#scrollMarkerStividor_4 {
+    display: none;
+    visibility: hidden;
+}

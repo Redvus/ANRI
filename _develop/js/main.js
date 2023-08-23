@@ -15,10 +15,12 @@ const wrapper = document.querySelector('.wrapper'),
     sectionFrontImage_1 = document.getElementById('sectionFrontImage_1'),
     sectionFrontImage_2 = document.getElementById('sectionFrontImage_2'),
     sectionFrontImage_3 = document.getElementById('sectionFrontImage_3'),
+    sectionFrontImage_4 = document.getElementById('sectionFrontImage_4'),
     sectionTopTitle = document.querySelector('.section-top__title'),
     sectionTitle_1 = document.getElementById('sectionTitle_1'),
     sectionTitle_2 = document.getElementById('sectionTitle_2'),
     sectionTitle_3 = document.getElementById('sectionTitle_3'),
+    sectionTitle_4 = document.getElementById('sectionTitle_4'),
     sectionTitleLine = document.querySelector('.section-title__line'),
     sectionTopText = document.getElementById('sectionTopText'),
     scrollMarkerTop = document.getElementById('scrollMarkerTop'),
@@ -292,6 +294,69 @@ function sectionFiveMove() {
         scrollTrigger: {
             trigger: sectionFront_4,
             scroller: wrapper,
+            scrub: false,
+            // pin: true,
+            start: "top top",
+            end: "100% top",
+            toggleActions: "play none none reverse",
+            // markers: {
+            //     startColor: "#ccc",
+            //     endColor: "#ccc"
+            // }
+        },
+        delay: "-1.3",
+        onStart: () => {
+            tl.set(scrollMarkerThird, {
+                backgroundColor: '#f2a07c'
+            })
+        }
+    });
+
+    tl
+        .fromTo(sectionFrontImage_4,
+            {
+                left: "3vw",
+                autoAlpha: 0
+            },
+            {
+                left: "0",
+                autoAlpha: 1
+            }
+        )
+        .to(sectionFrontImage_3, {
+            left: "-=3vw",
+            ease: "sine.inOut",
+            delay: "-0.6"
+        })
+        .to(sectionTitle_3, {
+                right: '15vw',
+                autoAlpha: 0,
+                duration: "0.2",
+                delay: "-0.4"
+            }
+        )
+        .fromTo(sectionTitle_4, {
+                right: '0',
+                autoAlpha: 0
+            },
+            {
+                right: '11vw',
+                autoAlpha: 1,
+                duration: "0.3",
+                delay: "-0.4"
+            }
+        )
+    ;
+
+    ScrollTrigger.refresh();
+}
+
+function sectionSixMove() {
+
+    let tl = new gsap.timeline({
+        scrollTrigger: {
+            trigger: sectionFront_5,
+            scroller: wrapper,
             scrub: true,
             // pin: true,
             start: "top top",
@@ -316,14 +381,14 @@ function sectionFiveMove() {
             autoAlpha: 0,
             delay: "-0.6"
         })
-        .to(sectionTitle_3, {
+        .to(sectionTitle_4, {
                 right: '0',
                 autoAlpha: 0,
                 duration: "0.2",
                 delay: "-0.6"
             }
         )
-        .to(sectionFrontImage_3, {
+        .to(sectionFrontImage_4, {
                 left: "0",
                 width: "118vw",
                 delay: "-0.6"
@@ -347,6 +412,7 @@ function initMain() {
     sectionThreeMove();
     sectionFourMove();
     sectionFiveMove();
+    sectionSixMove();
 }
 
 function initMainMobile() {

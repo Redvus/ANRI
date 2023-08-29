@@ -5,13 +5,22 @@
 .header {
 	width: 100%;
 	height: $headerHeight;
-	display: block;
 	position: fixed;
 	top: 0;
 	left: 0;
 	padding-bottom: $padding;
 	background-color: $fourth;
 	z-index: 9990;
+
+	&--desktop {
+		display: block;
+		visibility: visible;
+	}
+
+	&--mobile {
+		display: none;
+		visibility: hidden;
+	}
 
 	&__wrapper {
 		@extend %wrapperWidth;
@@ -169,20 +178,17 @@
 	-------------------------------------------------- */
 
 	&-mobile {
-
-		&__top {
-			width: 100%;
-			height: $headerMobileTopHeight;
-			position: fixed;
-			flex-direction: row;
-			top: 0;
-			left: 0;
-			background-color: $primary;
-			border-bottom: $border-normal solid $fourth;
-			display: none;
-			visibility: hidden;
-			z-index: 9997;
-		}
+		width: 100%;
+		height: $headerMobileTopHeight;
+		position: fixed;
+		flex-direction: row;
+		top: 0;
+		left: 0;
+		background-color: $fourth;
+		//border-bottom: $border-normal solid $fourth;
+		display: none;
+		visibility: hidden;
+		z-index: 9997;
 
 		&__bottom {
 			width: 100%;
@@ -199,7 +205,7 @@
 		}
 
 		&__logo {
-			width: 50%;
+			width: calc(100% / 3);
 			height: 100%;
 			display: flex;
 			align-items: center;
@@ -221,14 +227,14 @@
 		}
 
 		&__nav {
-			width: calc(100% - #{$headerMobileTopHeight} - (#{$padding} * 2) - #{$border-normal});
-			height: calc(100vh - (#{$headerMobileTopHeight} * 2) - (#{$padding} * 2));
+			width: calc(50% - (#{$padding} * 2));
+			height: calc(100vh - #{$headerMobileTopHeight} - (#{$padding} * 2));
 			position: fixed;
 			top: $headerMobileTopHeight;
 			right: 0;
 			background-color: $fourth;
 			padding: $padding;
-			border-left: $border-normal solid $primary;
+			//border-left: $border-normal solid $primary;
 			z-index: -1;
 			display: none;
 			visibility: hidden;
@@ -236,18 +242,18 @@
 
 			&-mask {
 				width: 100%;
-				height: calc(100vh - (#{$headerMobileTopHeight} * 2));
+				height: calc(100vh - #{$headerMobileTopHeight});
 				position: fixed;
 				top: $headerMobileTopHeight;
 				left: 0;
-				background-color: rgba($third, 0.8);
+				background-color: rgba($primary, 0.8);
 				z-index: -1;
 				opacity: 0;
 				visibility: hidden;
 			}
 
 			&-button {
-				width: $headerMobileTopHeight;
+				width: calc(100% / 3);
 				height: $headerMobileTopHeight;
 				display: none;
 				visibility: hidden;
@@ -279,9 +285,9 @@
 			}
 
 			&-line {
-				width: 50%;
+				width: calc(#{$headerMobileTopHeight} / 2);
 				height: $border_thin + 0.05;
-				background-color: $fourth;
+				background-color: $primary;
 				position: absolute;
 				// transition: transform 0.3s;
 
@@ -302,7 +308,7 @@
 		}
 
 		&__social {
-			width: calc((100% / 3) * 2);
+			width: calc(100% / 3);
 			height: 100%;
 			flex-direction: row;
 			display: none;
@@ -316,7 +322,7 @@
 				justify-content: center;
 
 				i {
-					color: $fourth;
+					color: $primary;
 				}
 			}
 		}
@@ -352,20 +358,19 @@
 	-------------------------------------------------- */
 
 	@include grid-media($Medium) {
-		&-mobile {
-			&__banner {
-				display: none;
-				visibility: hidden;
-			}
-		}
+
 	}
 
 	@include grid-media($XSmall) {
-		&-mobile {
-			&__banner {
-				display: none;
-				visibility: hidden;
-			}
+
+		&--mobile {
+			display: flex;
+			visibility: visible;
+		}
+
+		&--desktop {
+			display: none;
+			visibility: hidden;
 		}
 	}
 

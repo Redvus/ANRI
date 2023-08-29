@@ -19,7 +19,6 @@ $footer-grid: (
     $footer-height-block: 50px;
 
     background: $footer-background;
-    display: block;
     width: 100%;
     min-height: 10vh;
     position: relative;
@@ -491,7 +490,29 @@ $footer-grid: (
         }
     }
 
+    &--mobile {
+        display: none;
+        visibility: hidden;
+
+
+    }
+
+    &--desktop {
+        display: block;
+        visibility: visible;
+    }
+
     @include grid-media($XSmall) {
+
+        &--mobile {
+            display: block;
+            visibility: visible;
+        }
+
+        &--desktop {
+            display: none;
+            visibility: hidden;
+        }
 
         &-wrapper {
             width: calc(100% - (#{$padding} * 2));

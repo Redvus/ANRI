@@ -406,6 +406,13 @@ function sectionSixMove() {
     ScrollTrigger.refresh();
 }
 
+/*==================================================
+=                   Mobile Section                 =
+==================================================*/
+
+
+/*===========  End of Mobile Section  ============*/
+
 function initMain() {
     sectionTopMove();
     sectionTwoMove();
@@ -416,7 +423,7 @@ function initMain() {
 }
 
 function initMainMobile() {
-    // navMenuOpenMobile();
+
 }
 
 if (document.body.clientWidth > 820 || screen.width > 820) {

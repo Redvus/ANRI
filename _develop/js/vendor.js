@@ -124,13 +124,13 @@ function navMenuOpenMobile() {
         })
         .to(navButtonLineMiddle, {
             duration: 0.2,
-            delay: '-0.6',
+            delay: '-0.4',
             rotation: '180deg',
             ease: 'power2'
         })
         .to(navButtonLineTop, {
             duration: 0.2,
-            delay: '-0.6',
+            delay: '-0.4',
             rotation: '135deg',
             x: '27%',
             y: '200%',
@@ -139,7 +139,7 @@ function navMenuOpenMobile() {
         })
         .to(navButtonLineBottom, {
             duration: 0.2,
-            delay: '-0.6',
+            delay: '-0.4',
             rotation: '-135deg',
             x: '27%',
             y: '-200%',

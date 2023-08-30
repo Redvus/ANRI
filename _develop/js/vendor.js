@@ -2,15 +2,15 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-function scrollSmooth() {
-    const scrollLine = document.getElementById('scrollLine'),
-        wrapper = document.querySelector('.wrapper');
-    const locoScroll = new LocomotiveScroll({
-        el: wrapper,
-        smooth: true,
-        multiplier: 0.3
-    });
+const scrollLine = document.getElementById('scrollLine'),
+    wrapper = document.querySelector('.wrapper'),
+    locoScroll = new LocomotiveScroll({
+    el: wrapper,
+    smooth: true,
+    multiplier: 0.3
+});
 
+function scrollSmooth() {
 
     locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -182,6 +182,7 @@ function navMain() {
             .slideUp(200);
     });
 }
+
 /*===========  End of Mobile Nav =================*/
 
 

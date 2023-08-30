@@ -19,15 +19,191 @@
 	&--mobile {
 		display: none;
 		visibility: hidden;
+	}
 
-		width: calc(100% - (#{$padding} * 2));
+	&-mobile {
+		width: 100%;
 		min-height: 100vh;
 		position: relative;
 		top: 0;
 		left: 0;
-		padding: (calc(#{$headerHeight} + #{$padding})) $padding 0;
+		padding-top: $headerMobileTopHeight;
 		overflow: auto;
 		z-index: 1;
+
+		&__section {
+			width: 100%;
+			min-height: 100vh;
+			display: block;
+			position: relative;
+		}
+
+		&__intro {
+			width: 100%;
+			height: calc(100vh - #{$headerMobileTopHeight});
+			display: block;
+			position: relative;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			z-index: 1;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				object-position: center;
+				object-fit: cover;
+				position: absolute;
+				z-index: 1;
+			}
+
+			&_symbol {
+				width: 100%;
+				height: calc(100vh - #{$headerMobileTopHeight});
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 2;
+				overflow: hidden;
+				opacity: 0.35;
+
+				svg {
+					width: auto;
+					height: 100%;
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+
+			&_title {
+				width: calc(100% - (#{$padding} * 2));
+				height: auto;
+				display: block;
+				position: absolute;
+				top: 15vh;
+				left: 0;
+				padding: 0 $padding;
+				z-index: 3;
+			}
+
+			&_slogan {
+				top: 60vh;
+
+				h2 {
+					font-family: $heading-font-light;
+				}
+			}
+
+			&_text {
+				color: $fourth;
+				text-align: center;
+			}
+		}
+
+		&__content {
+			width: calc(100% - (#{$padding} * 2));
+			height: auto;
+			display: block;
+			position: relative;
+			padding: calc(#{$padding}) $padding;
+			text-align: justify;
+			background-color: $fourth;
+			//top: 0;
+			//left: 0;
+			z-index: 2;
+		}
+
+		&__category {
+			width: 100%;
+			height: auto;
+			display: block;
+			position: relative;
+			overflow: hidden;
+
+			&_front {
+				width: 100%;
+				height: 60vmin;
+				display: block;
+				position: relative;
+				margin-bottom: calc(#{$padding} * 2);
+
+				picture {
+					width: 100%;
+					height: 60vmin;
+					display: block;
+					position: relative;
+					margin-left: calc(-#{$padding} * 4);
+					overflow: hidden;
+					transform: $objectScew;
+
+					img {
+						width: 100%;
+						height: 100%;
+						display: block;
+						position: relative;
+						object-position: center;
+						object-fit: cover;
+						margin-left: calc(#{$padding} * 4);
+						transform: $objectScewReverse;
+					}
+				}
+			}
+
+			&_title {
+				width: calc(80% - (#{$padding} * 2));
+				height: calc(#{$padding} * 3);
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				position: absolute;
+				background-color: rgba($secondary, 0.3);
+				padding: $padding $padding $padding calc(#{$padding} * 3);
+				text-align: left;
+				left: 0;
+				bottom: 0;
+				margin-left: calc(#{$padding} * 4);
+				//transform: $objectScew;
+
+				h3, {
+					width: 80%;
+					color: $fourth;
+					font-size: calc(#{$font-size-base} + 0.2rem);
+					transform: $objectScewReverse;
+				}
+
+				i {
+					color: $fourth;
+					margin-left: 2vmin;
+					transform: $objectScewReverse;
+
+				}
+			}
+
+			&_line {
+				height: auto;
+				display: flex;
+				flex-direction: row;
+				position: absolute;
+				left: 77vmin;
+				bottom: 0;
+				transform-origin: 100% 100%;
+				transform: $objectScew;
+
+				li {
+					width: calc(#{$padding} * 2);
+					height: 60vmin;
+					display: block;
+					position: relative;
+					background-color: $five;
+					margin-right: calc(#{$padding} * 1.5);
+				}
+			}
+		}
 	}
 
 	//&:after {

@@ -1,8 +1,7 @@
 'use strict';
 
 // Animation front section
-const wrapper = document.querySelector('.wrapper'),
-    sectionFront_0 = document.getElementById('sectionFront_0'),
+const sectionFront_0 = document.getElementById('sectionFront_0'),
     sectionFront_1 = document.getElementById('sectionFront_1'),
     sectionFront_2 = document.getElementById('sectionFront_2'),
     sectionFront_3 = document.getElementById('sectionFront_3'),
@@ -406,10 +405,33 @@ function sectionSixMove() {
     ScrollTrigger.refresh();
 }
 
+function sectionScrollTo() {
+    scrollMarkerTop.addEventListener('click', () => {
+        locoScroll.scrollTo(sectionFront_1);
+    });
+    scrollMarkerFirst.addEventListener('click', () => {
+        locoScroll.scrollTo(sectionFront_2);
+    });
+    scrollMarkerSecond.addEventListener('click', () => {
+        locoScroll.scrollTo(sectionFront_3);
+    });
+    scrollMarkerThird.addEventListener('click', () => {
+        locoScroll.scrollTo(sectionFront_4);
+    });
+}
+
 /*==================================================
 =                   Mobile Section                 =
 ==================================================*/
 
+function scrollSmoothMobile() {
+    const wrapperMobile = document.querySelector('.wrapper-mobile');
+    const locoScroll = new LocomotiveScroll({
+        el: wrapperMobile,
+        smooth: true,
+        multiplier: 0.3
+    });
+}
 
 /*===========  End of Mobile Section  ============*/
 
@@ -420,10 +442,11 @@ function initMain() {
     sectionFourMove();
     sectionFiveMove();
     sectionSixMove();
+    // sectionScrollTo();
 }
 
 function initMainMobile() {
-
+    // scrollSmoothMobile();
 }
 
 if (document.body.clientWidth > 820 || screen.width > 820) {

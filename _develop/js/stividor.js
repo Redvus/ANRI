@@ -1,7 +1,6 @@
 'use strict';
 
-const wrapper = document.querySelector('.wrapper'),
-    sectionChangeContent = new SectionAnimation(),
+const sectionChangeContent = new SectionAnimation(),
     sectionTopChangeContent = new SectionTopAnimation(),
     sectionTopTitle = document.querySelector('.section-top__title'),
     sectionStividor_0 = document.getElementById('sectionStividor_0'),

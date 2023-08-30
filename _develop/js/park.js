@@ -3,7 +3,6 @@
 // Section Change
 const sectionChangeContent = new SectionAnimation(),
     sectionTopChangeContent = new SectionTopAnimation(),
-    wrapper = document.querySelector('.wrapper'),
     sectionPark_0 = document.getElementById('sectionPark_0'),
     sectionPark_1 = document.getElementById('sectionPark_1'),
     sectionPark_2 = document.getElementById('sectionPark_2'),

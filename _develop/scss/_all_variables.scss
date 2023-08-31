@@ -419,7 +419,7 @@ h1 {
     //transition: all .3s;
 
     @include grid-media($XSmall) {
-        font-size: calc(#{$font-size-base} + 1.5vmax);
+        font-size: calc(#{$font-size-base} + 2.3vmax);
         line-height: 1;
     }
 }

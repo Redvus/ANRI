@@ -22,6 +22,7 @@ const sectionFront_0 = document.getElementById('sectionFront_0'),
     sectionTitle_4 = document.getElementById('sectionTitle_4'),
     sectionTitleLine = document.querySelector('.section-title__line'),
     sectionTopText = document.getElementById('sectionTopText'),
+    sectionParkText = document.getElementById('sectionParkText'),
     scrollMarkerTop = document.getElementById('scrollMarkerTop'),
     scrollMarkerFirst = document.getElementById('scrollMarkerFirst'),
     scrollMarkerSecond = document.getElementById('scrollMarkerSecond'),
@@ -123,9 +124,20 @@ function sectionTwoMove() {
             autoAlpha: 0,
             delay: "-0.1"
         })
+        // .fromTo(sectionParkText,
+        //     {
+        //         x: '2vw',
+        //         autoAlpha: 0
+        //     },
+        //     {
+        //         x: '0',
+        //         autoAlpha: 1,
+        //         delay: "-0.4"
+        //     }
+        // )
         .fromTo(sectionFrontImage_1,
             {
-                left: "3vw",
+                left: "2vw",
                 autoAlpha: 0
             },
             {
@@ -181,6 +193,11 @@ function sectionThreeMove() {
     });
 
     tl
+        // .to(sectionParkText, {
+        //     x: '-2vw',
+        //     autoAlpha: 0,
+        //     delay: "-0.1"
+        // })
         .fromTo(sectionFrontImage_2,
             {
                 left: "3vw",

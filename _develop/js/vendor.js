@@ -75,14 +75,15 @@ const bodyDiv = document.querySelector('body'),
 function scriptDesktopHide() {
     bodyDiv.removeChild(wrapperDesktop);
     bodyDiv.removeChild(headerDesktop);
-    if (wrapperMobile.hasChildNodes(footerMobile)) {
-        wrapperMobile.removeChild(footerMobile);
-    }
+    // if (wrapperMobile.hasChildNodes(footerMobile)) {
+    //     wrapperMobile.removeChild(footerMobile);
+    // }
 }
 
 function scriptMobileHide() {
     bodyDiv.removeChild(wrapperMobile);
     bodyDiv.removeChild(headerMobile);
+    bodyDiv.removeChild(footerMobile);
 }
 
 /*===========  End of Mobile Section  ============*/

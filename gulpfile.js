@@ -104,6 +104,18 @@ gulp.task('projects-js', function(){
         .pipe(gulp.dest(path.dest.js));
 });
 
+gulp.task('projectsSample-js', function(){
+    return gulp.src([
+        path.src.js + 'SectionAnimation.js',
+        path.src.js + 'SectionTopAnimation.js',
+        path.src.js + 'projectsSample.js'
+    ])
+        .pipe(concat('projectsSample.js'))
+        .pipe(terser())
+        .pipe(rename({suffix: "-min"}))
+        .pipe(gulp.dest(path.dest.js));
+});
+
 gulp.task('engineering-js', function(){
     return gulp.src([
         path.src.js + 'SectionAnimation.js',
@@ -198,6 +210,11 @@ gulp.task('watch', function() {
         path.watch.js + 'SectionAnimation.js',
         path.watch.js + 'SectionTopAnimation.js'],
         gulp.series('projects-js'));
+    gulp.watch([
+            path.watch.js + 'projectsSample.js',
+            path.watch.js + 'SectionAnimation.js',
+            path.watch.js + 'SectionTopAnimation.js'],
+        gulp.series('projectsSample-js'));
     gulp.watch([
             path.watch.js + 'engineering.js',
             path.watch.js + 'SectionAnimation.js',

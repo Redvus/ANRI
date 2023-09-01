@@ -69,7 +69,9 @@ const bodyDiv = document.querySelector('body'),
     headerDesktop = document.querySelector('.header--desktop'),
     headerMobile = document.querySelector('.header--mobile'),
     footerDesktop = document.querySelector('.footer--desktop'),
-    footerMobile = document.querySelector('.footer--mobile')
+    footerMobile = document.querySelector('.footer--mobile'),
+    navMobile = document.querySelector('.header-mobile__nav'),
+    navMobileMask = document.querySelector('.header-mobile__nav-mask')
 ;
 
 function scriptDesktopHide() {
@@ -84,6 +86,8 @@ function scriptMobileHide() {
     bodyDiv.removeChild(wrapperMobile);
     bodyDiv.removeChild(headerMobile);
     bodyDiv.removeChild(footerMobile);
+    bodyDiv.removeChild(navMobile);
+    bodyDiv.removeChild(navMobileMask);
 }
 
 /*===========  End of Mobile Section  ============*/
@@ -169,16 +173,16 @@ function navMenuOpenMobile() {
 }
 
 function navMain() {
-    $('.item-has-children').children('a').on('click', function (event) {
+    document.querySelector(".item-has-children > a").addEventListener('click', (event) => {
         event.preventDefault();
-        $(this).toggleClass('submenu-open')
+        this.classList.toggle("submenu-open")
             .next('.submenu')
             .slideToggle(200)
             .end()
             .parent('.item-has-children')
             .siblings('.item-has-children')
             .children('a')
-            .removeClass('submenu-open')
+            .classList.remove("submenu-open")
             .next('.submenu')
             .slideUp(200);
     });
@@ -191,6 +195,7 @@ function initVendor() {
     scrollSmooth();
     reloadWindowResize();
     keyLock();
+    navMain();
     scriptMobileHide();
 }
 

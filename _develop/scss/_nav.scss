@@ -80,6 +80,18 @@
 						visibility: visible;
 					}
 				}
+
+				.item-has-children {
+
+					a {
+						color: $secondary;
+
+						&:after {
+							display: block;
+							visibility: visible;
+						}
+					}
+				}
 			}
 
 			 &:last-child {
@@ -119,7 +131,7 @@
 
 					#navCrossVert {
 						fill: none;
-						stroke: $fourth;
+						stroke: $primary;
 						stroke-width: 0.2rem;
 						transform-origin: 50% 50%;
 						transition: transform .2s;
@@ -127,7 +139,7 @@
 
 					#navCrossHorz {
 						fill: none;
-						stroke: $fourth;
+						stroke: $primary;
 						stroke-width: 0.2rem;
 						transform-origin: 50% 50%;
 						transition: transform .2s;
@@ -140,12 +152,12 @@
 				position: absolute;
 				// top: $headerHeight / 2;
 				// margin-left: -$padding;
-				background-color: $primary;
+				background-color: $fourth;
 				box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
 				transition: all $base-duration;
 				display: none;
 				opacity: 0;
-				right: 0;
+				left: 0;
 				z-index: 9996;
 
 				li {
@@ -163,31 +175,36 @@
 					}
 
 					a {
-						// width: calc(100% - (#{$padding} * 2));
-						height: 100%;
+						width: max-content;
+						height: calc(#{$padding} * 3);
 						display: flex;
 						align-items: center;
 						justify-content: flex-end;
 						position: relative;
-						padding: calc(#{$padding} / 2) $padding;
-						color: $fourth;
+						padding: 0 $padding 0 0;
+						color: $primary;
 						text-align: right;
 						line-height: 1.2;
 					}
 
 					&.active {
-						background-color: $navLiBackgroundActive;
+						//background-color: $navLiBackgroundActive;
 
 						a {
-							color: $fourth;
+							color: $secondary;
+
+							&:after {
+								display: none;
+								visibility: hidden;
+							}
 						}
 					}
 
 					&:hover {
-						background-color: $navLiBackgroundActive;
+						//background-color: $navLiBackgroundActive;
 
 						a {
-							color: $fourth;
+							color: $secondary;
 						}
 					}
 				}
@@ -206,12 +223,12 @@
 					svg#navCross {
 
 						#navCrossVert {
-							stroke: $third;
+							stroke: $secondary;
 							transform: rotate(90deg);
 						}
 
 						#navCrossHorz {
-							stroke: $third;
+							stroke: $secondary;
 							transform: rotate(360deg);
 						}
 					}
@@ -223,12 +240,14 @@
 	&__mobile {
 
 		li {
-			margin: calc(#{$padding} / 3) 0;
+			margin: $padding 0;
+			line-height: 1 !important;
 
 			a {
 				font-family: $heading-font;
 				font-size: $font-size-base;
 				text-transform: uppercase;
+				line-height: 1 !important;
 			}
 
 			&.active {

@@ -9,7 +9,7 @@
 	top: 0;
 	left: 0;
 	padding-bottom: $padding;
-	background-color: $fourth;
+	//background-color: $fourth;
 	z-index: 9990;
 
 	&--desktop {
@@ -36,7 +36,7 @@
 		display: block;
 		position: relative;
 		float: left;
-		background-color: $fourth;
+		//background-color: $fourth;
 		overflow: hidden;
 
 		&__adress {
@@ -46,8 +46,8 @@
 			flex-direction: column;
 			position: relative;
 			align-items: flex-start;
-			justify-content: flex-start;
-			padding-left: calc(#{$padding} * 2); //$headerMenuPadding
+			justify-content: center;
+			padding-left: calc(#{$padding} * 10); //$headerMenuPadding
 
 			li {
 				width: auto;
@@ -69,7 +69,7 @@
 				a {
 					width: auto;
 					display: block;
-					color: $primary;
+					color: $fourth;
 				}
 
 				svg {
@@ -78,22 +78,22 @@
 					display: block;
 
 					path {
-						fill: $third;
+						fill: lighten($five, 10%);
 					}
 				}
 
 				&:hover {
 
 					i, a {
-						color: $secondary;
+						color: lighten($five, 10%);
 					}
 
-					svg {
-
-						path {
-							fill: $third;
-						}
-					}
+					//svg {
+					//
+					//	path {
+					//		fill: $third;
+					//	}
+					//}
 				}
 			}
 		}
@@ -165,7 +165,7 @@
 
 	&__menu {
 		width: calc(100% - (#{$headerLogoWidth}) - #{$headerMenuPadding});
-		height: $headerBottomHeight;
+		height: $headerMenuHeight;
 		display: flex;
 		flex-direction: row-reverse;
 		justify-content: space-between;

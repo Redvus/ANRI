@@ -37,7 +37,7 @@ function sectionTopMove() {
             scroller: wrapper,
             scrub: true,
             // pin: true,
-            start: "top 104px",
+            start: "top 7.5rem",
             end: "bottom top",
             toggleActions: "play none none reverse",
             // markers: {

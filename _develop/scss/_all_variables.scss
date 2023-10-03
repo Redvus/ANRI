@@ -89,12 +89,13 @@ $objectScewReverseUp: skew(42deg);
 /* Header
 -------------------------------------------------- */
 $headerTopHeight: calc(#{$padding} * 2);
-$headerBottomHeight: calc(#{$padding} * 3.5);
+$headerBottomHeight: calc(#{$padding} * 4.5);
 $headerLineHeight: calc(#{$padding} / 2.5);
 $headerHeight: calc(#{$headerTopHeight} + #{$headerBottomHeight} + #{$headerLineHeight});
 
 $headerLogoWidth: 19rem;
-$headerMenuPadding: 7vw;
+$headerMenuPadding: 5rem;
+$headerMenuHeight: calc(#{$padding} * 3.2);
 
 $headerHeightMobile: $padding;
 $headerHeightBottom: $padding;
@@ -108,8 +109,8 @@ $navLiBackgroundActive: darken($primary, 7%);
 /* Page
 -------------------------------------------------- */
 $sectionTopHeight: 100vh;
-$sectionTopImageWidth: 13rem;
-$sectionTopImageHeight: calc(100vh - #{$headerHeight});
+$sectionTopImageWidth: 19rem;
+$sectionTopImageHeight: calc(100vh - #{$headerHeight} - #{$padding});
 $sectionTopLineHeight: calc(1rem + 10vmin);
 
 $sectionServicesTitleHeight: calc(#{$padding} * 6);

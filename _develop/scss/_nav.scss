@@ -4,7 +4,7 @@
 
 .nav-main {
 	width: 100%;
-	height: $headerBottomHeight;
+	height: $headerMenuHeight;
 	display: flex;
 	flex-direction: row-reverse;
 	position: relative;
@@ -13,7 +13,7 @@
 
 	&__menu {
 		// width: 100%;
-		height: $headerBottomHeight;
+		height: $headerMenuHeight;
 		display: flex;
 		flex-direction: row;
 
@@ -24,13 +24,13 @@
 
 			a {
 				width: auto;
-				height: $headerBottomHeight;
+				height: $headerMenuHeight;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				font-family: $heading-font-light;
+				font-family: $heading-font-normal;
 				font-size: calc(#{$font-size-large} - 0.1rem);
-				color: $primary;
+				color: $fourth;
 				margin: 0 $padding;
 				position: relative;
 
@@ -106,12 +106,12 @@
 				&.active {
 
 					a {
-						color: $primary;
+						color: lighten($five, 10%);
 					}
 				}
 
 				a {
-					color: $secondary;
+					color: lighten($five, 10%);
 				}
 			}
 		}
@@ -131,7 +131,7 @@
 
 					#navCrossVert {
 						fill: none;
-						stroke: $primary;
+						stroke: $fourth;
 						stroke-width: 0.2rem;
 						transform-origin: 50% 50%;
 						transition: transform .2s;
@@ -139,7 +139,7 @@
 
 					#navCrossHorz {
 						fill: none;
-						stroke: $primary;
+						stroke: $fourth;
 						stroke-width: 0.2rem;
 						transform-origin: 50% 50%;
 						transition: transform .2s;
@@ -151,9 +151,9 @@
 				min-width: $padding * 8;
 				position: absolute;
 				// top: $headerHeight / 2;
-				// margin-left: -$padding;
-				background-color: $fourth;
-				box-shadow: 0 0.1rem 0.1rem rgba($third, 0.2);
+				//margin-top: -($padding);
+				background-color: rgba($six, 0.2);
+				//box-shadow: 0 0.1rem 0.1rem rgba($six, 0.2);
 				transition: all $base-duration;
 				display: none;
 				opacity: 0;
@@ -182,7 +182,7 @@
 						justify-content: flex-end;
 						position: relative;
 						padding: 0 $padding 0 0;
-						color: $primary;
+						color: $fourth;
 						text-align: right;
 						line-height: 1.2;
 					}
@@ -191,7 +191,7 @@
 						//background-color: $navLiBackgroundActive;
 
 						a {
-							color: $secondary;
+							color: lighten($five, 10%);
 
 							&:after {
 								display: none;
@@ -204,7 +204,7 @@
 						//background-color: $navLiBackgroundActive;
 
 						a {
-							color: $secondary;
+							color: lighten($five, 10%);
 						}
 					}
 				}
@@ -223,12 +223,12 @@
 					svg#navCross {
 
 						#navCrossVert {
-							stroke: $secondary;
+							stroke: lighten($five, 10%);
 							transform: rotate(90deg);
 						}
 
 						#navCrossHorz {
-							stroke: $secondary;
+							stroke: lighten($five, 10%);
 							transform: rotate(360deg);
 						}
 					}

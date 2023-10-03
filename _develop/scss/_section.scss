@@ -118,38 +118,56 @@
 		&__mask {
 			width: $sectionTopImageWidth;
 			height: $sectionTopImageHeight;
+			//height: 100vh;
 			display: block;
 			position: fixed;
 			overflow: hidden;
 			background-color: $secondary;
-			left: 7rem;
-			transform: $objectScew;
+			left: 6.5rem;
+			bottom: 0;
+			//transform: $objectScew;
 			transform-origin: 100% 0;
 			z-index: 215;
 
-			&_red {
+			&_over {
 				content: "";
 				width: $sectionTopImageWidth;
-				height: calc(#{$sectionTopImageHeight} - #{$headerHeight} - #{$padding});
+				//height: calc(#{$sectionTopImageHeight} - #{$headerHeight} - #{$padding});
+				height: $sectionTopImageHeight;
 				display: block;
 				position: fixed;
 				overflow: hidden;
 				background-color: rgba($primary, 0.6);
-				left: -8.4rem;
+				left: calc(-#{$padding} * 18.7);
+				bottom: 0;
 				transform: $objectScewReverseUp;
 				transform-origin: 100% 0;
 				z-index: 2;
 			}
+
+			&_white {
+				width: calc(#{$padding} * 25);
+				height: 100vh;
+				display: block;
+				position: fixed;
+				overflow: hidden;
+				background-color: $fourth;
+				left: calc(#{$padding} * 1.5);
+				transform: $objectScew;
+				transform-origin: 100% 0;
+				z-index: 214;
+			}
 		}
 
 		&__image {
-			width: calc(100vw + 2vw);
-			height: calc(#{$sectionTopImageHeight} - #{$headerHeight} - #{$padding});
+			width: calc(100vw - 3vw);
+			//height: calc(#{$sectionTopImageHeight} - #{$headerHeight} - #{$padding});
+			height: 100vh;
 			display: block;
 			position: fixed;
 			overflow: hidden;
 			background-color: $fourth;
-			left: 7rem; //13.05vw
+			left: calc(#{$padding} * 15); //13.05vw
 			transform: $objectScew;
 			//transform-origin: 100% 0;
 			z-index: 1;
@@ -160,7 +178,7 @@
 				display: block;
 				position: absolute;
 				top: 0;
-				left: -6vw;
+				left: calc((-#{$padding}) * 12);
 				object-position: center;
 				object-fit: cover;
 				transform: skew(22deg);
@@ -201,8 +219,8 @@
 			justify-content: center;
 			position: absolute;
 			//right: $headerMenuPadding;
-			right: $headerMenuPadding;
-			bottom: -0.75rem;
+			right: calc(#{$headerMenuPadding} + (#{$padding} * 3.5));
+			bottom: $headerHeight;
 			//background-color: $five;
 			text-align: right;
 			transform: $objectScewReverse;

@@ -47,7 +47,7 @@
 			position: relative;
 			align-items: flex-start;
 			justify-content: flex-start;
-			padding-left: calc(#{$padding} * 2); //$headerMenuPadding
+			padding-left: calc(#{$padding} * 3.5); //$headerMenuPadding
 
 			li {
 				width: auto;

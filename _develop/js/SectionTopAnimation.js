@@ -1,7 +1,7 @@
 class SectionTopAnimation {
 
     sectionTopChange(sectionID, sectionChangeImage, sectionTitle) {
-        const sectionTopMaskRed = document.querySelector('.section-top__mask_red'),
+        const sectionTopMaskOver = document.querySelector('.section-top__mask_over'),
             sectionTopMask = document.querySelector('.section-top__mask'),
             sectionTopImage = document.querySelector('.section-top__image')
         ;
@@ -11,7 +11,7 @@ class SectionTopAnimation {
                 scroller: wrapper,
                 scrub: true,
                 // pin: true,
-                start: "top 104px",
+                start: "top 96px",
                 end: "100% top",
                 toggleActions: "play none none reverse"
             },
@@ -24,11 +24,11 @@ class SectionTopAnimation {
 
         tl
             .to(sectionTopImage, {
-                left: "-10vw",
+                left: "-10.5rem",
                 width: "127vw",
                 delay: "-0.2"
             })
-            .to(sectionTopMaskRed, {
+            .to(sectionTopMaskOver, {
                 autoAlpha: 0,
                 duration: "1",
                 delay: "-0.6",
@@ -37,7 +37,7 @@ class SectionTopAnimation {
             .to(sectionTopMask, {
                 // width: "40vw",
                 // autoAlpha: 0,
-                left: "-17vw",
+                left: "-15rem",
                 duration: 1,
                 delay: "-0.9",
                 ease: 'power3.out'
@@ -49,6 +49,7 @@ class SectionTopAnimation {
                 delay: "-1"
             })
             .to(sectionTitle, {
+                right: "5rem",
                 autoAlpha: 0,
                 delay: "-1"
             })
@@ -58,7 +59,7 @@ class SectionTopAnimation {
     }
 
     sectionTopWithMask(sectionID, sectionChangeImage, sectionTitle) {
-        const sectionTopMaskRed = document.querySelector('.section-top__mask_red'),
+        const sectionTopMaskOver = document.querySelector('.section-top__mask_over'),
             sectionTopMask = document.querySelector('.section-top__mask'),
             sectionTopImage = document.querySelector('.section-top__image')
         ;
@@ -80,20 +81,21 @@ class SectionTopAnimation {
             //     width: "127vw",
             //     delay: "-0.2"
             // })
-            .to(sectionTopMaskRed, {
+            .to(sectionTopMaskOver, {
                 autoAlpha: 0,
                 duration: "1",
                 delay: "-0.6",
                 ease: 'power3.out'
             })
-            // .to(sectionTopMask, {
-            //     // width: "40vw",
-            //     // autoAlpha: 0,
-            //     left: "-17vw",
-            //     duration: 1,
-            //     delay: "-0.9",
-            //     ease: 'power3.out'
-            // })
+            .to(sectionTopMask, {
+                // width: "40vw",
+                // autoAlpha: 0,
+                // left: "-17vw",
+                duration: 1,
+                delay: "-0.6",
+                backgroundColor: '#321557',
+                ease: 'power3.out'
+            })
             .to(sectionChangeImage, {
                 // left: "-11vw",
                 // autoAlpha: 1,
@@ -103,7 +105,7 @@ class SectionTopAnimation {
             .to(sectionTitle, {
                 autoAlpha: 0,
                 delay: "-1",
-                right: "0"
+                right: "5rem"
             })
         ;
 
@@ -111,7 +113,7 @@ class SectionTopAnimation {
     }
 
     sectionTopChangeInfoColor(sectionID, sectionChangeImage, sectionTitle) {
-        const sectionTopMaskRed = document.querySelector('.section-top__mask_red'),
+        const sectionTopMaskOver = document.querySelector('.section-top__mask_over'),
             sectionInfoDescriptionSingle = document.querySelector('.section-info__description--single'),
             sectionTopMask = document.querySelector('.section-top__mask'),
             sectionTopImage = document.querySelector('.section-top__image')
@@ -122,7 +124,7 @@ class SectionTopAnimation {
                 scroller: wrapper,
                 scrub: true,
                 // pin: true,
-                start: "top 104px",
+                start: "top 96px",
                 end: "100% top",
                 toggleActions: "play none none reverse"
             },
@@ -137,11 +139,11 @@ class SectionTopAnimation {
 
         tl
             .to(sectionTopImage, {
-                left: "-10vw",
+                left: "-10.5rem",
                 width: "127vw",
                 delay: "-0.2"
             })
-            .to(sectionTopMaskRed, {
+            .to(sectionTopMaskOver, {
                 autoAlpha: 0,
                 duration: "1",
                 delay: "-0.6",
@@ -150,7 +152,7 @@ class SectionTopAnimation {
             .to(sectionTopMask, {
                 // width: "40vw",
                 // autoAlpha: 0,
-                left: "-17vw",
+                left: "-15rem",
                 duration: 1,
                 delay: "-0.9",
                 ease: 'power3.out'
@@ -163,7 +165,8 @@ class SectionTopAnimation {
             })
             .to(sectionTitle, {
                 autoAlpha: 0,
-                delay: "-1"
+                delay: "-1",
+                right: "5rem"
             })
         ;
 

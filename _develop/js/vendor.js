@@ -7,7 +7,7 @@ const scrollLine = document.getElementById('scrollLine'),
     locoScroll = new LocomotiveScroll({
     el: wrapper,
     smooth: true,
-    multiplier: 0.3
+    multiplier: 0.2
 });
 
 function scrollSmooth() {

@@ -77,7 +77,9 @@ const sectionInfoTitle_0 = document.getElementById('sectionInfoTitle_0'),
     sectionInfoDescription_8 = document.getElementById('sectionInfoDescription_8'),
     sectionInfoDescription_9 = document.getElementById('sectionInfoDescription_9'),
     sectionInfoDescription_10 = document.getElementById('sectionInfoDescription_10'),
-    sectionInfoDescription_11 = document.getElementById('sectionInfoDescription_11')
+    sectionInfoDescription_11 = document.getElementById('sectionInfoDescription_11'),
+    sectionInfoDescriptionDark = document.querySelector('.section-info__description--dark'),
+    sectionInfoLine = document.querySelector('.section-info__line')
 ;
 
 function sectionAnimLoad() {
@@ -208,8 +210,52 @@ function sectionAnimLoad() {
         sectionInfoDescription_11);
 }
 
+function sectionTopChangeInfoColorLoad() {
+    let tl = new gsap.timeline({
+        scrollTrigger: {
+            trigger: sectionPark_0,
+            scroller: wrapper,
+            scrub: true,
+            start: "top 50vh",
+            end: "100% top",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    tl
+        .from([sectionInfoDescriptionDark, sectionInfoLine], {
+            autoAlpha: 0,
+            duration: "0.3"
+        })
+    ;
+    ScrollTrigger.refresh();
+}
+
+function sectionTopChangeInfoColorHide() {
+    let tl = new gsap.timeline({
+        scrollTrigger: {
+            trigger: sectionPark_10,
+            scroller: wrapper,
+            scrub: false,
+            start: "top 30vh",
+            end: "100% top",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    tl
+        .to([sectionInfoDescriptionDark, sectionInfoLine], {
+            autoAlpha: 0,
+            duration: "0.3"
+        })
+    ;
+    ScrollTrigger.refresh();
+}
+
 function initPark() {
     sectionAnimLoad();
+    sectionTopChangeInfoColorLoad();
+    sectionTopChangeInfoColorHide();
 }
 
 function initParkMobile() {

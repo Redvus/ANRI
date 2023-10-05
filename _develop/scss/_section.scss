@@ -127,15 +127,15 @@
 			transform-origin: 100% 0;
 			z-index: 215;
 
-			&_red {
+			&_over {
 				content: "";
 				width: $sectionTopImageWidth;
-				height: calc(#{$sectionTopImageHeight} - #{$headerHeight} - #{$padding});
+				height: $sectionTopImageHeight;
 				display: block;
 				position: fixed;
 				overflow: hidden;
 				background-color: rgba($primary, 0.6);
-				left: -8.4rem;
+				left: -12.2rem;
 				transform: $objectScewReverseUp;
 				transform-origin: 100% 0;
 				z-index: 2;
@@ -144,12 +144,12 @@
 
 		&__image {
 			width: calc(100vw + 2vw);
-			height: calc(#{$sectionTopImageHeight} - #{$headerHeight} - #{$padding});
+			height: $sectionTopImageHeight;
 			display: block;
 			position: fixed;
 			overflow: hidden;
 			background-color: $fourth;
-			left: 7rem; //13.05vw
+			left: $sectionTopImageLeft;
 			transform: $objectScew;
 			//transform-origin: 100% 0;
 			z-index: 1;
@@ -160,7 +160,7 @@
 				display: block;
 				position: absolute;
 				top: 0;
-				left: -6vw;
+				left: -($sectionTopImageLeft);
 				object-position: center;
 				object-fit: cover;
 				transform: skew(22deg);
@@ -201,10 +201,11 @@
 			justify-content: center;
 			position: absolute;
 			//right: $headerMenuPadding;
-			right: $headerMenuPadding;
-			bottom: -0.75rem;
+			right: calc(#{$headerMenuPadding} + (#{$padding} * 3));
+			bottom: calc(#{$headerHeight} + #{$padding});
 			//background-color: $five;
 			text-align: right;
+			text-shadow: 0 0 calc(#{$padding} / 2) rgba($six, 0.7);
 			transform: $objectScewReverse;
 			transform-origin: 0 100%;
 			z-index: 3;
@@ -213,6 +214,16 @@
 				color: $fourth;
 				font-size: calc(1rem + 4vmax);
 				//margin: $padding calc(#{$padding} * 2);
+			}
+
+			&:after {
+				content: "";
+				width: 100%;
+				height: $border_bold;
+				display: block;
+				position: absolute;
+				background-color: $secondary;
+				bottom: calc((-#{$padding}) / 2);
 			}
 		}
 
@@ -460,22 +471,24 @@
 		}
 
 		&__title {
-			width: calc(#{$sectionInfoTitleWidth} + 2.5vw - ((#{$padding} * 7)));
+			width: calc(#{$sectionInfoTitleWidth} - ((#{$padding} * 6)));
 			height: $sectionInfoTitleHeight;
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
 			position: absolute;
 			top: 0;
-			right: -2.5vw;
-			padding: 0 calc(#{$padding} * 6) 0 $padding;
-			background-color: rgba($secondary, 50%);
+			left: calc(#{$padding} * 6.9);
+			padding: 0 calc(#{$padding} * 3);
+			background-color: $secondary;
 			text-align: right;
-			transform: $objectScew;
+			//transform: $objectScew;
 			transform-origin: 100% 100%;
 			z-index: 2;
 
 			h3 {
+				display: block;
+				position: absolute;
 				color: $fourth;
 				transform: $objectScewReverse;
 			}
@@ -498,14 +511,39 @@
 			&--single {
 				width: calc(100% - #{$headerMenuPadding} - (#{$padding} * 4));
 				right: 13rem;
-				background-color: #dfdfe8;
+				background-color: rgba($primary, 0.4);
+			}
+
+			&--dark {
+				width: calc(100% - #{$headerMenuPadding} - (#{$padding} * 4));
+				right: 13rem;
+				background-color: rgba($primary, 0.2);
+
+				& > span {
+					text-shadow: 0 0 calc(#{$padding} / 5) rgba($fourth, 0.4) !important;
+
+					p {
+						color: $primary;
+						//font-size: $font-size-base;
+					}
+
+					ul {
+
+						li {
+							color: $primary;
+							font-size: $font-size-small;
+						}
+					}
+				}
 			}
 
 			span {
 				position: fixed;
-				//font-size: $font-size-base;
+				//font-size: $font-size-small;
 				line-height: calc(#{$body-line-height} - 0.2);
 				transform: $objectScewReverse;
+				color: $fourth;
+				text-shadow: 0 0 calc(#{$padding} / 5) rgba($six, 0.9);
 				opacity: 0;
 			}
 		}

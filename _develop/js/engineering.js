@@ -53,7 +53,7 @@ const sectionChangeContent = new SectionAnimation(),
     sectionEngineeringInfoDescription_10 = document.getElementById('sectionEngineeringInfoDescription_10'),
     sectionEngineeringInfoDescription_11 = document.getElementById('sectionEngineeringInfoDescription_11'),
     sectionEngineeringInfoDescription_12 = document.getElementById('sectionEngineeringInfoDescription_12'),
-    sectionInfoDescriptionSingle = document.querySelector('.section-info__description--single'),
+    sectionInfoDescriptionDark = document.querySelector('.section-info__description--dark'),
     sectionInfoLine = document.querySelector('.section-info__line')
 ;
 
@@ -174,7 +174,7 @@ function sectionTopChangeInfoColorLoad() {
     });
 
     tl
-        .from([sectionInfoDescriptionSingle, sectionInfoLine], {
+        .from([sectionInfoDescriptionDark, sectionInfoLine], {
             autoAlpha: 0,
             duration: "0.3"
         })
@@ -195,7 +195,7 @@ function sectionTopChangeInfoColorHide() {
     });
 
     tl
-        .to([sectionInfoDescriptionSingle, sectionInfoLine], {
+        .to([sectionInfoDescriptionDark, sectionInfoLine], {
             autoAlpha: 0,
             duration: "0.3"
         })

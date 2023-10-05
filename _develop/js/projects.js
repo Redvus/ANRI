@@ -176,6 +176,14 @@ function sectionProjectsAnimLoad() {
         sectionProjectInfoDescription_12,
         sectionProjectInfoDescription_13
     );
+    // sectionChangeContent.sectionSimpleInfoChange(
+    //     sectionProject_13,
+    //     sectionProjectImage_13,
+    //     sectionProjectImage_12,
+    //     scrollMarkerProject_13,
+    //     sectionProjectInfoDescription_13,
+    //     sectionProjectInfoDescription_14
+    // );
 }
 
 function sectionTopChangeInfoColorLoad() {
@@ -202,7 +210,7 @@ function sectionTopChangeInfoColorLoad() {
 function sectionTopChangeInfoColorHide() {
     let tl = new gsap.timeline({
         scrollTrigger: {
-            trigger: sectionProject_11,
+            trigger: sectionProject_12,
             scroller: wrapper,
             scrub: false,
             start: "top 30vh",

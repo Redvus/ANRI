@@ -9,7 +9,7 @@ const sectionFront_0 = document.getElementById('sectionFront_0'),
     sectionFront_5 = document.getElementById('sectionFront_5'),
     sectionFrontTopImage = document.querySelector('.section-top__image'),
     sectionFrontTopMask = document.querySelector('.section-top__mask'),
-    sectionFrontTopMaskRed = document.querySelector('.section-top__mask_red'),
+    sectionFrontTopMaskOver = document.querySelector('.section-top__mask_over'),
     sectionFrontImage_0 = document.getElementById('sectionFrontImage_0'),
     sectionFrontImage_1 = document.getElementById('sectionFrontImage_1'),
     sectionFrontImage_2 = document.getElementById('sectionFrontImage_2'),
@@ -37,7 +37,7 @@ function sectionTopMove() {
             scroller: wrapper,
             scrub: true,
             // pin: true,
-            start: "top 104px",
+            start: "top 96px",
             end: "bottom top",
             toggleActions: "play none none reverse",
             // markers: {
@@ -54,11 +54,11 @@ function sectionTopMove() {
 
     tl
         .to(sectionFrontTopImage, {
-            left: "-10vw",
+            left: "-10.5rem",
             width: "70vw",
             delay: "-0.2"
         })
-        .to(sectionFrontTopMaskRed, {
+        .to(sectionFrontTopMaskOver, {
             // skewX: '0deg',
             // left: "-17vw",
             autoAlpha: 0,
@@ -69,7 +69,7 @@ function sectionTopMove() {
         .to(sectionFrontTopMask, {
             // width: "40vw",
             // autoAlpha: 0,
-            left: "-17vw",
+            left: "-13rem",
             duration: "1",
             delay: "-0.9",
             ease: 'power3.out'
@@ -411,7 +411,7 @@ function sectionSixMove() {
             }
         )
         .to(sectionFrontTopImage, {
-                left: "-10vw",
+                left: "-10.5rem",
                 width: "127vw",
                 // height: "70vh",
                 delay: "-0.6"

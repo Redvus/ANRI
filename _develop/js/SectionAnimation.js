@@ -32,57 +32,57 @@ class SectionAnimation {
         tl
             .fromTo(sectionNextImage,
                 {
-                    left: "3vw",
+                    left: "5rem",
                     autoAlpha: 0
                 },
                 {
-                    left: "0",
+                    left: "2rem",
                     autoAlpha: 1,
                     ease: "sine.inOut"
                 }
             )
             .to(sectionChangeImage, {
-                left: "-=3vw",
+                left: "-=3rem",
                 autoAlpha: 0,
                 ease: "sine.inOut",
                 delay: "-0.6"
             })
             .fromTo(sectionInfoTitleNext,
                 {
-                    right: "-5vw",
+                    right: "2rem",
                     autoAlpha: 0
                 },
                 {
-                    right: "-2.5vw",
+                    right: "3rem",
                     autoAlpha: 1,
                     ease: "sine.inOut",
                     delay: "-0.6"
                 }
             )
             .to(sectionInfoTitleChange, {
-                right: "+=2.5vw",
+                right: "+=1rem",
                 autoAlpha: 0,
                 ease: "sine.inOut",
                 delay: "-0.6"
             })
-            .fromTo(sectionInfoImageNext,
-                {
-                    right: "-5vw",
-                    autoAlpha: 0
-                },
-                {
-                    right: "-2.5vw",
-                    autoAlpha: 1,
-                    ease: "sine.inOut",
-                    delay: "-0.6"
-                }
-            )
-            .to(sectionInfoImageChange, {
-                right: "+=2.5vw",
-                autoAlpha: 0,
-                ease: "sine.inOut",
-                delay: "-0.6"
-            })
+            // .fromTo(sectionInfoImageNext,
+            //     {
+            //         right: "-5vw",
+            //         autoAlpha: 0
+            //     },
+            //     {
+            //         right: "-2.5vw",
+            //         autoAlpha: 1,
+            //         ease: "sine.inOut",
+            //         delay: "-0.6"
+            //     }
+            // )
+            // .to(sectionInfoImageChange, {
+            //     right: "+=2.5vw",
+            //     autoAlpha: 0,
+            //     ease: "sine.inOut",
+            //     delay: "-0.6"
+            // })
             .fromTo(sectionInfoDescriptionNext,
                 {
                     right: "0",
@@ -134,17 +134,17 @@ class SectionAnimation {
         tl
             .fromTo(sectionNextImage,
                 {
-                    left: "-3vw",
+                    left: "-6rem",
                     autoAlpha: 0
                 },
                 {
-                    left: "-6vw",
+                    left: "-9rem",
                     autoAlpha: 1,
                     ease: "sine.inOut"
                 }
             )
             .to(sectionChangeImage, {
-                left: "-=3vw",
+                left: "-=3rem",
                 autoAlpha: 0,
                 ease: "sine.inOut",
                 delay: "-0.6"
@@ -246,17 +246,17 @@ class SectionAnimation {
         tl
             .fromTo(sectionNextImage,
                 {
-                    left: "3vw",
+                    left: "5rem",
                     autoAlpha: 0
                 },
                 {
-                    left: "0",
+                    left: "2rem",
                     autoAlpha: 1,
                     ease: "sine.inOut"
                 }
             )
             .to(sectionChangeImage, {
-                left: "-=3vw",
+                left: "-=3rem",
                 autoAlpha: 0,
                 ease: "sine.inOut",
                 delay: "-0.6"

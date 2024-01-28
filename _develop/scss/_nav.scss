@@ -33,6 +33,7 @@
 				color: $fourth;
 				margin: 0 $padding;
 				position: relative;
+				text-shadow: 0 0 $border_normal $primary;
 
 				&.submenu-open {
 					// background-color: $colorCategoryTitle;

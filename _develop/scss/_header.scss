@@ -9,7 +9,7 @@
 	top: 0;
 	left: 0;
 	padding-bottom: $padding;
-	background-color: $fourth;
+	//background-color: $fourth;
 	z-index: 9990;
 
 	&--desktop {
@@ -36,7 +36,7 @@
 		display: block;
 		position: relative;
 		float: left;
-		background-color: $fourth;
+		//background-color: $fourth;
 		overflow: hidden;
 
 		&__adress {
@@ -47,7 +47,7 @@
 			position: relative;
 			align-items: flex-start;
 			justify-content: flex-start;
-			padding-left: calc(#{$padding} * 3.5); //$headerMenuPadding
+			padding-left: calc(#{$padding} * 6); //$headerMenuPadding
 
 			li {
 				width: auto;
@@ -60,7 +60,7 @@
 				text-align: right;
 
 				i {
-					color: $third;
+					color: $fourth;
 					margin-right: calc(#{$padding} / 3);
 					font-size: $font-size-base;
 					line-height: calc(#{$font-size-base} + 0.4rem);
@@ -69,7 +69,8 @@
 				a {
 					width: auto;
 					display: block;
-					color: $primary;
+					color: $fourth;
+					text-shadow: 0 0 0.5rem $primary;
 				}
 
 				svg {
@@ -85,7 +86,7 @@
 				&:hover {
 
 					i, a {
-						color: $secondary;
+						color: $fourth;
 					}
 
 					svg {
@@ -138,7 +139,7 @@
 		align-items: center;
 		justify-content: flex-end;
 		position: relative;
-		background-color: $fourth;
+		//background-color: $fourth;
 		left: 0;
 		top: 0;
 

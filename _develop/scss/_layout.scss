@@ -6,7 +6,7 @@
 	position: relative;
 	top: 0;
 	left: 0;
-	padding-top: calc(#{$headerHeight} + #{$padding});
+	//padding-top: calc(#{$headerHeight} + #{$padding});
 	overflow: auto;
 	// animation: fadeIn 0.6s ease-in-out;
 	z-index: 1;

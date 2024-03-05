@@ -94,6 +94,8 @@ $navLiBackgroundActive: darken($primary, 7%);
 -------------------------------------------------- */
 $sectionTopHeight: 100vh;
 $sectionTopImageWidth: 13rem;
+//$sectionTopImageHeight: calc(100vh - #{$headerHeight});
+//$sectionTopImageHeight: 100vh;
 $sectionTopImageHeight: calc(100vh - #{$headerHeight});
 $sectionTopLineHeight: calc(1rem + 10vmin);
 

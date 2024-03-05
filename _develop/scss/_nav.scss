@@ -30,7 +30,9 @@
 				align-items: center;
 				font-family: $heading-font-light;
 				font-size: calc(#{$font-size-large} - 0.1rem);
-				color: $colorTextActive;
+				//color: $colorTextActive;
+				color: lighten($five, 10%);
+				//text-shadow: 0 0 0.5rem $primary;
 				margin: 0 $padding;
 				position: relative;
 
@@ -84,7 +86,8 @@
 				.item-has-children {
 
 					a {
-						color: $colorTextHover;
+						//color: $colorTextHover;
+						color: $fourth;
 
 						&:after {
 							display: block;
@@ -106,12 +109,14 @@
 				&.active {
 
 					a {
-						color: $colorTextHover;
+						//color: $colorTextHover;
+						color: $fourth;
 					}
 				}
 
 				a {
-					color: $colorTextHover;
+					//color: $colorTextHover;
+					color: $fourth;
 				}
 			}
 		}
@@ -131,7 +136,8 @@
 
 					#navCrossVert {
 						fill: none;
-						stroke: $colorTextActive;
+						//stroke: $colorTextActive;
+						stroke: lighten($five, 10%);
 						stroke-width: 0.2rem;
 						transform-origin: 50% 50%;
 						transition: transform .2s;
@@ -139,7 +145,8 @@
 
 					#navCrossHorz {
 						fill: none;
-						stroke: $colorTextActive;
+						//stroke: $colorTextActive;
+						stroke: lighten($five, 10%);
 						stroke-width: 0.2rem;
 						transform-origin: 50% 50%;
 						transition: transform .2s;
@@ -191,7 +198,8 @@
 						//background-color: $navLiBackgroundActive;
 
 						a {
-							color: $colorTextHover;
+							//color: $colorTextHover;
+							color: $fourth;
 
 							&:after {
 								display: none;
@@ -223,12 +231,14 @@
 					svg#navCross {
 
 						#navCrossVert {
-							stroke: $colorTextHover;
+							//stroke: $colorTextHover;
+							stroke: $fourth;
 							transform: rotate(90deg);
 						}
 
 						#navCrossHorz {
-							stroke: $colorTextHover;
+							//stroke: $colorTextHover;
+							stroke: $fourth;
 							transform: rotate(360deg);
 						}
 					}

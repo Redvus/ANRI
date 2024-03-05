@@ -122,7 +122,8 @@
 			position: fixed;
 			overflow: hidden;
 			background-color: $secondary;
-			left: 7rem;
+			left: 12rem;
+			top: calc(#{$headerHeight} + #{$padding});
 			transform: $objectScew;
 			transform-origin: 100% 0;
 			z-index: 215;
@@ -135,7 +136,8 @@
 				position: fixed;
 				overflow: hidden;
 				background-color: rgba($primary, 0.6);
-				left: -12.2rem;
+				left: -13rem;
+				top: calc(#{$headerHeight} + #{$padding});
 				transform: $objectScewReverseUp;
 				transform-origin: 100% 0;
 				z-index: 2;
@@ -143,13 +145,14 @@
 		}
 
 		&__image {
-			width: calc(100vw + 2vw);
-			height: $sectionTopImageHeight;
+			width: calc(100vw + 11vw);
+			//height: $sectionTopImageHeight;
+			height: $sectionTopHeight;
 			display: block;
 			position: fixed;
 			overflow: hidden;
 			background-color: $fourth;
-			left: $sectionTopImageLeft;
+			left: 16.5rem;
 			transform: $objectScew;
 			//transform-origin: 100% 0;
 			z-index: 1;
@@ -160,7 +163,8 @@
 				display: block;
 				position: absolute;
 				top: 0;
-				left: -($sectionTopImageLeft);
+				//left: -($sectionTopImageLeft);
+				left: -10rem;
 				object-position: center;
 				object-fit: cover;
 				transform: skew(22deg);

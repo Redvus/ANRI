@@ -1,7 +1,8 @@
 'use strict';
 
 // Animation front section
-const sectionFront_0 = document.getElementById('sectionFront_0'),
+const
+    sectionFront_0 = document.getElementById('sectionFront_0'),
     sectionFront_1 = document.getElementById('sectionFront_1'),
     sectionFront_2 = document.getElementById('sectionFront_2'),
     sectionFront_3 = document.getElementById('sectionFront_3'),
@@ -54,7 +55,7 @@ function sectionTopMove() {
 
     tl
         .to(sectionFrontTopImage, {
-            left: "-10.5rem",
+            left: "-13.5rem",
             width: "70vw",
             delay: "-0.2"
         })
